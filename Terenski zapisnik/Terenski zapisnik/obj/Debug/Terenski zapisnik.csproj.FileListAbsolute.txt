@@ -1,0 +1,12 @@
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\bin\Debug\Terenski zapisnik.exe.config
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\bin\Debug\Terenski zapisnik.exe
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\bin\Debug\Terenski zapisnik.pdb
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.csproj.AssemblyReference.cache
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.csproj.SuggestedBindingRedirects.cache
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Properties.Resources.resources
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.csproj.GenerateResource.cache
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.csproj.CoreCompileInputs.cache
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.exe
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.pdb
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.MainForm.resources
+C:\Users\thera\OneDrive\Desktop\Astral tech\C#\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.InputForm.resources
