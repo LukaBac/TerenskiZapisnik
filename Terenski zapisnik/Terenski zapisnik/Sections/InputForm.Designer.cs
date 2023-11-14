@@ -88,40 +88,40 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ucOutput = new System.Windows.Forms.TextBox();
+            this.uOutput = new System.Windows.Forms.TextBox();
+            this.uLOutput = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Oplosje1 = new System.Windows.Forms.TextBox();
+            this.Oplosje2 = new System.Windows.Forms.TextBox();
+            this.Oplosje3 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.deltaH = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.VdopL = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Vdopmm = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.deltaV = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.VdodRacun_MJN = new System.Windows.Forms.TextBox();
+            this.Vdod3_MJN = new System.Windows.Forms.TextBox();
+            this.Vdod3 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.Vdod2_MJN = new System.Windows.Forms.TextBox();
+            this.Vdod2 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.Vdod1_MJN = new System.Windows.Forms.TextBox();
+            this.Vdod1 = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -129,8 +129,8 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Vdod_Racun = new System.Windows.Forms.TextBox();
+            this.ispisBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -236,7 +236,6 @@
             this.radijusCijevi_Osjetljivost.Size = new System.Drawing.Size(92, 13);
             this.radijusCijevi_Osjetljivost.TabIndex = 1;
             this.radijusCijevi_Osjetljivost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.radijusCijevi_Osjetljivost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox37
             // 
@@ -248,7 +247,6 @@
             this.textBox37.TabIndex = 0;
             this.textBox37.Text = "∂O/∂r ";
             this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox37.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // panel9
             // 
@@ -268,7 +266,6 @@
             this.DuzinaCijevi_Osjetljivost.Size = new System.Drawing.Size(92, 13);
             this.DuzinaCijevi_Osjetljivost.TabIndex = 1;
             this.DuzinaCijevi_Osjetljivost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.DuzinaCijevi_Osjetljivost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox35
             // 
@@ -280,7 +277,6 @@
             this.textBox35.TabIndex = 0;
             this.textBox35.Text = "∂O/∂L ";
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox35.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // panel8
             // 
@@ -300,7 +296,6 @@
             this.DubinaVode_Osjetljivost.Size = new System.Drawing.Size(92, 13);
             this.DubinaVode_Osjetljivost.TabIndex = 1;
             this.DubinaVode_Osjetljivost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.DubinaVode_Osjetljivost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox33
             // 
@@ -312,7 +307,6 @@
             this.textBox33.TabIndex = 0;
             this.textBox33.Text = "∂O/∂H";
             this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox33.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // panel7
             // 
@@ -333,7 +327,6 @@
             this.Radijus_Osjetljivost.Size = new System.Drawing.Size(92, 13);
             this.Radijus_Osjetljivost.TabIndex = 1;
             this.Radijus_Osjetljivost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Radijus_Osjetljivost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox31
             // 
@@ -345,7 +338,6 @@
             this.textBox31.TabIndex = 0;
             this.textBox31.Text = "∂O/∂R ";
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox31.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // panel6
             // 
@@ -366,7 +358,6 @@
             this.textBox28.TabIndex = 1;
             this.textBox28.Text = "1.732051";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox28.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox29
             // 
@@ -378,7 +369,6 @@
             this.textBox29.TabIndex = 0;
             this.textBox29.Text = "√3";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox29.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // panel5
             // 
@@ -399,7 +389,6 @@
             this.textBox26.TabIndex = 1;
             this.textBox26.Text = "1.732051";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox26.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox27
             // 
@@ -411,7 +400,6 @@
             this.textBox27.TabIndex = 0;
             this.textBox27.Text = "√3";
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox27.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // panel4
             // 
@@ -432,7 +420,6 @@
             this.textBox24.TabIndex = 1;
             this.textBox24.Text = "1.732051";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox24.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox25
             // 
@@ -444,7 +431,6 @@
             this.textBox25.TabIndex = 0;
             this.textBox25.Text = "√3";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox25.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // radijusCijevi_Nesigurnost
             // 
@@ -455,140 +441,169 @@
             this.radijusCijevi_Nesigurnost.Size = new System.Drawing.Size(94, 49);
             this.radijusCijevi_Nesigurnost.TabIndex = 70;
             this.radijusCijevi_Nesigurnost.Text = "";
-            this.radijusCijevi_Nesigurnost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(505, 58);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(544, 77);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(13, 13);
+            this.label17.Size = new System.Drawing.Size(14, 16);
             this.label17.TabIndex = 64;
             this.label17.Text = "5";
             // 
             // label16
             // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(405, 58);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(444, 77);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(13, 13);
+            this.label16.Size = new System.Drawing.Size(14, 16);
             this.label16.TabIndex = 63;
             this.label16.Text = "4";
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(305, 58);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(344, 77);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(13, 13);
+            this.label15.Size = new System.Drawing.Size(14, 16);
             this.label15.TabIndex = 62;
             this.label15.Text = "3";
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(205, 58);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(244, 77);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(13, 13);
+            this.label14.Size = new System.Drawing.Size(14, 16);
             this.label14.TabIndex = 61;
             this.label14.Text = "2";
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(105, 58);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(144, 77);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 13);
+            this.label13.Size = new System.Drawing.Size(14, 16);
             this.label13.TabIndex = 60;
             this.label13.Text = "1";
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(5, 282);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(45, 303);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(10, 13);
+            this.label11.Size = new System.Drawing.Size(11, 16);
             this.label11.TabIndex = 58;
             this.label11.Text = "r";
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 226);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(44, 245);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
+            this.label10.Size = new System.Drawing.Size(14, 16);
             this.label10.TabIndex = 57;
             this.label10.Text = "L";
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 170);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(42, 189);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 13);
+            this.label9.Size = new System.Drawing.Size(17, 16);
             this.label9.TabIndex = 56;
             this.label9.Text = "H";
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 114);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(42, 133);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 13);
+            this.label8.Size = new System.Drawing.Size(17, 16);
             this.label8.TabIndex = 55;
             this.label8.Text = "R";
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 58);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(44, 77);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 13);
+            this.label7.Size = new System.Drawing.Size(14, 16);
             this.label7.TabIndex = 50;
             this.label7.Text = "0";
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(505, 2);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(514, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 26);
+            this.label6.Size = new System.Drawing.Size(73, 32);
             this.label6.TabIndex = 54;
             this.label6.Text = "koeficijent osjetljivosti";
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(405, 2);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(434, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.Size = new System.Drawing.Size(33, 16);
             this.label5.TabIndex = 53;
             this.label5.Text = "a/√3";
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(305, 2);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(321, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.Size = new System.Drawing.Size(60, 32);
             this.label4.TabIndex = 52;
             this.label4.Text = "faktor razdiobe";
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 2);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(234, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 51;
             this.label3.Text = "a(m)";
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(105, 2);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(143, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.Size = new System.Drawing.Size(15, 16);
             this.label2.TabIndex = 50;
             this.label2.Text = "a";
             // 
@@ -601,7 +616,6 @@
             this.radijusCijevi_Root3.Size = new System.Drawing.Size(92, 49);
             this.radijusCijevi_Root3.TabIndex = 39;
             this.radijusCijevi_Root3.Text = "";
-            this.radijusCijevi_Root3.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // radijusCijevi_M
             // 
@@ -612,7 +626,6 @@
             this.radijusCijevi_M.Size = new System.Drawing.Size(92, 49);
             this.radijusCijevi_M.TabIndex = 37;
             this.radijusCijevi_M.Text = "0.0005";
-            this.radijusCijevi_M.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // radijusCijevi
             // 
@@ -623,7 +636,7 @@
             this.radijusCijevi.Size = new System.Drawing.Size(92, 49);
             this.radijusCijevi.TabIndex = 36;
             this.radijusCijevi.Text = "";
-            this.radijusCijevi.TextChanged += new System.EventHandler(this.TextUpdate);
+            this.radijusCijevi.TextChanged += new System.EventHandler(this.inputChange);
             // 
             // DuzinaCijevi_Root3
             // 
@@ -634,7 +647,6 @@
             this.DuzinaCijevi_Root3.Size = new System.Drawing.Size(92, 48);
             this.DuzinaCijevi_Root3.TabIndex = 32;
             this.DuzinaCijevi_Root3.Text = "";
-            this.DuzinaCijevi_Root3.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // duzinaCijevi_M
             // 
@@ -644,8 +656,7 @@
             this.duzinaCijevi_M.Name = "duzinaCijevi_M";
             this.duzinaCijevi_M.Size = new System.Drawing.Size(92, 48);
             this.duzinaCijevi_M.TabIndex = 30;
-            this.duzinaCijevi_M.Text = "0.0005";
-            this.duzinaCijevi_M.TextChanged += new System.EventHandler(this.TextUpdate);
+            this.duzinaCijevi_M.Text = "";
             // 
             // DuzinaCijevi
             // 
@@ -656,7 +667,7 @@
             this.DuzinaCijevi.Size = new System.Drawing.Size(92, 48);
             this.DuzinaCijevi.TabIndex = 29;
             this.DuzinaCijevi.Text = "";
-            this.DuzinaCijevi.TextChanged += new System.EventHandler(this.TextUpdate);
+            this.DuzinaCijevi.TextChanged += new System.EventHandler(this.inputChange);
             // 
             // DubinaVode_Root3
             // 
@@ -667,7 +678,6 @@
             this.DubinaVode_Root3.Size = new System.Drawing.Size(92, 48);
             this.DubinaVode_Root3.TabIndex = 25;
             this.DubinaVode_Root3.Text = "";
-            this.DubinaVode_Root3.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // DubinaVode_M
             // 
@@ -678,7 +688,6 @@
             this.DubinaVode_M.Size = new System.Drawing.Size(92, 48);
             this.DubinaVode_M.TabIndex = 23;
             this.DubinaVode_M.Text = "0.0005";
-            this.DubinaVode_M.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // DubinaVode
             // 
@@ -689,7 +698,7 @@
             this.DubinaVode.Size = new System.Drawing.Size(92, 48);
             this.DubinaVode.TabIndex = 22;
             this.DubinaVode.Text = "";
-            this.DubinaVode.TextChanged += new System.EventHandler(this.TextUpdate);
+            this.DubinaVode.TextChanged += new System.EventHandler(this.inputChange);
             // 
             // Radijus_Root3
             // 
@@ -700,7 +709,6 @@
             this.Radijus_Root3.Size = new System.Drawing.Size(92, 48);
             this.Radijus_Root3.TabIndex = 18;
             this.Radijus_Root3.Text = "";
-            this.Radijus_Root3.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // Radijus_M
             // 
@@ -711,7 +719,6 @@
             this.Radijus_M.Size = new System.Drawing.Size(92, 48);
             this.Radijus_M.TabIndex = 16;
             this.Radijus_M.Text = "0.0005";
-            this.Radijus_M.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // Radijus
             // 
@@ -722,32 +729,38 @@
             this.Radijus.Size = new System.Drawing.Size(92, 48);
             this.Radijus.TabIndex = 15;
             this.Radijus.Text = "";
-            this.Radijus.TextChanged += new System.EventHandler(this.TextUpdate);
+            this.Radijus.TextChanged += new System.EventHandler(this.inputChange);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 2);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 49;
             this.label1.Text = "Sastavnica";
             // 
             // label18
             // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(605, 2);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(613, 13);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 26);
+            this.label18.Size = new System.Drawing.Size(78, 32);
             this.label18.TabIndex = 65;
             this.label18.Text = "standardna nesigurnost";
             // 
             // label19
             // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(605, 58);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(645, 77);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(13, 13);
+            this.label19.Size = new System.Drawing.Size(14, 16);
             this.label19.TabIndex = 66;
             this.label19.Text = "6";
             // 
@@ -760,7 +773,6 @@
             this.Radijus_Nesigurnost.Size = new System.Drawing.Size(94, 48);
             this.Radijus_Nesigurnost.TabIndex = 67;
             this.Radijus_Nesigurnost.Text = "";
-            this.Radijus_Nesigurnost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // DubinaVode_Nesigurnost
             // 
@@ -771,7 +783,6 @@
             this.DubinaVode_Nesigurnost.Size = new System.Drawing.Size(94, 48);
             this.DubinaVode_Nesigurnost.TabIndex = 68;
             this.DubinaVode_Nesigurnost.Text = "";
-            this.DubinaVode_Nesigurnost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // DuzinaCijevi_Nesigurnost
             // 
@@ -782,7 +793,6 @@
             this.DuzinaCijevi_Nesigurnost.Size = new System.Drawing.Size(94, 48);
             this.DuzinaCijevi_Nesigurnost.TabIndex = 69;
             this.DuzinaCijevi_Nesigurnost.Text = "";
-            this.DuzinaCijevi_Nesigurnost.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // panel3
             // 
@@ -803,7 +813,6 @@
             this.textBox23.TabIndex = 1;
             this.textBox23.Text = "1.732051";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox23.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
             // textBox20
             // 
@@ -815,28 +824,27 @@
             this.textBox20.TabIndex = 0;
             this.textBox20.Text = "√3";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox20.TextChanged += new System.EventHandler(this.TextUpdate);
             // 
-            // textBox1
+            // ucOutput
             // 
-            this.textBox1.Location = new System.Drawing.Point(834, 381);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.ucOutput.Location = new System.Drawing.Point(834, 381);
+            this.ucOutput.Name = "ucOutput";
+            this.ucOutput.Size = new System.Drawing.Size(100, 20);
+            this.ucOutput.TabIndex = 2;
             // 
-            // textBox2
+            // uOutput
             // 
-            this.textBox2.Location = new System.Drawing.Point(833, 407);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.uOutput.Location = new System.Drawing.Point(833, 407);
+            this.uOutput.Name = "uOutput";
+            this.uOutput.Size = new System.Drawing.Size(100, 20);
+            this.uOutput.TabIndex = 3;
             // 
-            // textBox3
+            // uLOutput
             // 
-            this.textBox3.Location = new System.Drawing.Point(833, 433);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.uLOutput.Location = new System.Drawing.Point(833, 433);
+            this.uLOutput.Name = "uLOutput";
+            this.uLOutput.Size = new System.Drawing.Size(100, 20);
+            this.uLOutput.TabIndex = 4;
             // 
             // label20
             // 
@@ -874,29 +882,26 @@
             this.label23.TabIndex = 8;
             this.label23.Text = "Omoceno oplosje";
             // 
-            // textBox4
+            // Oplosje1
             // 
-            this.textBox4.Location = new System.Drawing.Point(78, 38);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
-            this.textBox4.Text = "Racuna se";
+            this.Oplosje1.Location = new System.Drawing.Point(78, 38);
+            this.Oplosje1.Name = "Oplosje1";
+            this.Oplosje1.Size = new System.Drawing.Size(100, 20);
+            this.Oplosje1.TabIndex = 9;
             // 
-            // textBox5
+            // Oplosje2
             // 
-            this.textBox5.Location = new System.Drawing.Point(78, 64);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.Text = "Racuna se";
+            this.Oplosje2.Location = new System.Drawing.Point(78, 64);
+            this.Oplosje2.Name = "Oplosje2";
+            this.Oplosje2.Size = new System.Drawing.Size(100, 20);
+            this.Oplosje2.TabIndex = 10;
             // 
-            // textBox6
+            // Oplosje3
             // 
-            this.textBox6.Location = new System.Drawing.Point(78, 93);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
-            this.textBox6.Text = "Racuna se";
+            this.Oplosje3.Location = new System.Drawing.Point(78, 93);
+            this.Oplosje3.Name = "Oplosje3";
+            this.Oplosje3.Size = new System.Drawing.Size(100, 20);
+            this.Oplosje3.TabIndex = 11;
             // 
             // label24
             // 
@@ -929,11 +934,11 @@
             // 
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.Oplosje1);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.Oplosje2);
             this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.Oplosje3);
             this.panel1.Location = new System.Drawing.Point(12, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(193, 127);
@@ -942,14 +947,14 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label31);
-            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.deltaH);
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.label28);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.VdopL);
             this.panel2.Controls.Add(this.label29);
-            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.Vdopmm);
             this.panel2.Controls.Add(this.label30);
-            this.panel2.Controls.Add(this.textBox9);
+            this.panel2.Controls.Add(this.deltaV);
             this.panel2.Location = new System.Drawing.Point(12, 220);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(193, 146);
@@ -964,13 +969,13 @@
             this.label31.TabIndex = 16;
             this.label31.Text = "Δh";
             // 
-            // textBox10
+            // deltaH
             // 
-            this.textBox10.Location = new System.Drawing.Point(78, 119);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 15;
-            this.textBox10.Text = "Racuna se";
+            this.deltaH.Location = new System.Drawing.Point(78, 119);
+            this.deltaH.Name = "deltaH";
+            this.deltaH.Size = new System.Drawing.Size(100, 20);
+            this.deltaH.TabIndex = 15;
+            this.deltaH.Text = "Racuna se";
             // 
             // label27
             // 
@@ -990,13 +995,12 @@
             this.label28.TabIndex = 14;
             this.label28.Text = "ΔV";
             // 
-            // textBox7
+            // VdopL
             // 
-            this.textBox7.Location = new System.Drawing.Point(78, 38);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 9;
-            this.textBox7.Text = "Racuna se";
+            this.VdopL.Location = new System.Drawing.Point(78, 38);
+            this.VdopL.Name = "VdopL";
+            this.VdopL.Size = new System.Drawing.Size(100, 20);
+            this.VdopL.TabIndex = 9;
             // 
             // label29
             // 
@@ -1007,13 +1011,12 @@
             this.label29.TabIndex = 13;
             this.label29.Text = "Vdop (mm)";
             // 
-            // textBox8
+            // Vdopmm
             // 
-            this.textBox8.Location = new System.Drawing.Point(78, 64);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 10;
-            this.textBox8.Text = "Racuna se";
+            this.Vdopmm.Location = new System.Drawing.Point(78, 64);
+            this.Vdopmm.Name = "Vdopmm";
+            this.Vdopmm.Size = new System.Drawing.Size(100, 20);
+            this.Vdopmm.TabIndex = 10;
             // 
             // label30
             // 
@@ -1024,13 +1027,13 @@
             this.label30.TabIndex = 12;
             this.label30.Text = "Vdop (l)";
             // 
-            // textBox9
+            // deltaV
             // 
-            this.textBox9.Location = new System.Drawing.Point(78, 93);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 11;
-            this.textBox9.Text = "Racuna se";
+            this.deltaV.Location = new System.Drawing.Point(78, 93);
+            this.deltaV.Name = "deltaV";
+            this.deltaV.Size = new System.Drawing.Size(100, 20);
+            this.deltaV.TabIndex = 11;
+            this.deltaV.Text = "Racuna se";
             // 
             // tableLayoutPanel2
             // 
@@ -1039,15 +1042,15 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox22, 2, 5);
-            this.tableLayoutPanel2.Controls.Add(this.textBox19, 2, 4);
-            this.tableLayoutPanel2.Controls.Add(this.textBox18, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.VdodRacun_MJN, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.Vdod3_MJN, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.Vdod3, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.textBox17, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.textBox16, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBox15, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.Vdod2_MJN, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.Vdod2, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.textBox14, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBox13, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox12, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.Vdod1_MJN, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.Vdod1, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label35, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label36, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label42, 0, 1);
@@ -1055,7 +1058,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label47, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label48, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox11, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox21, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.Vdod_Racun, 1, 5);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(230, 384);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
@@ -1068,27 +1071,28 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(435, 193);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
-            // textBox22
+            // VdodRacun_MJN
             // 
-            this.textBox22.Location = new System.Drawing.Point(293, 160);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(131, 20);
-            this.textBox22.TabIndex = 71;
-            this.textBox22.Text = "Racuna se";
+            this.VdodRacun_MJN.Location = new System.Drawing.Point(293, 160);
+            this.VdodRacun_MJN.Name = "VdodRacun_MJN";
+            this.VdodRacun_MJN.Size = new System.Drawing.Size(131, 20);
+            this.VdodRacun_MJN.TabIndex = 71;
             // 
-            // textBox19
+            // Vdod3_MJN
             // 
-            this.textBox19.Location = new System.Drawing.Point(293, 129);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(131, 20);
-            this.textBox19.TabIndex = 68;
+            this.Vdod3_MJN.Location = new System.Drawing.Point(293, 129);
+            this.Vdod3_MJN.Name = "Vdod3_MJN";
+            this.Vdod3_MJN.Size = new System.Drawing.Size(131, 20);
+            this.Vdod3_MJN.TabIndex = 68;
+            this.Vdod3_MJN.TextChanged += new System.EventHandler(this.Vdod_MJN_Update);
             // 
-            // textBox18
+            // Vdod3
             // 
-            this.textBox18.Location = new System.Drawing.Point(149, 129);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(131, 20);
-            this.textBox18.TabIndex = 67;
+            this.Vdod3.Location = new System.Drawing.Point(149, 129);
+            this.Vdod3.Name = "Vdod3";
+            this.Vdod3.Size = new System.Drawing.Size(131, 20);
+            this.Vdod3.TabIndex = 67;
+            this.Vdod3.TextChanged += new System.EventHandler(this.Vdod_Racun_Update);
             // 
             // textBox17
             // 
@@ -1097,19 +1101,21 @@
             this.textBox17.Size = new System.Drawing.Size(131, 20);
             this.textBox17.TabIndex = 66;
             // 
-            // textBox16
+            // Vdod2_MJN
             // 
-            this.textBox16.Location = new System.Drawing.Point(293, 98);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(131, 20);
-            this.textBox16.TabIndex = 65;
+            this.Vdod2_MJN.Location = new System.Drawing.Point(293, 98);
+            this.Vdod2_MJN.Name = "Vdod2_MJN";
+            this.Vdod2_MJN.Size = new System.Drawing.Size(131, 20);
+            this.Vdod2_MJN.TabIndex = 65;
+            this.Vdod2_MJN.TextChanged += new System.EventHandler(this.Vdod_MJN_Update);
             // 
-            // textBox15
+            // Vdod2
             // 
-            this.textBox15.Location = new System.Drawing.Point(149, 98);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(131, 20);
-            this.textBox15.TabIndex = 64;
+            this.Vdod2.Location = new System.Drawing.Point(149, 98);
+            this.Vdod2.Name = "Vdod2";
+            this.Vdod2.Size = new System.Drawing.Size(131, 20);
+            this.Vdod2.TabIndex = 64;
+            this.Vdod2.TextChanged += new System.EventHandler(this.Vdod_Racun_Update);
             // 
             // textBox14
             // 
@@ -1118,19 +1124,21 @@
             this.textBox14.Size = new System.Drawing.Size(131, 20);
             this.textBox14.TabIndex = 63;
             // 
-            // textBox13
+            // Vdod1_MJN
             // 
-            this.textBox13.Location = new System.Drawing.Point(293, 67);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(131, 20);
-            this.textBox13.TabIndex = 62;
+            this.Vdod1_MJN.Location = new System.Drawing.Point(293, 67);
+            this.Vdod1_MJN.Name = "Vdod1_MJN";
+            this.Vdod1_MJN.Size = new System.Drawing.Size(131, 20);
+            this.Vdod1_MJN.TabIndex = 62;
+            this.Vdod1_MJN.TextChanged += new System.EventHandler(this.Vdod_MJN_Update);
             // 
-            // textBox12
+            // Vdod1
             // 
-            this.textBox12.Location = new System.Drawing.Point(149, 67);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(131, 20);
-            this.textBox12.TabIndex = 19;
+            this.Vdod1.Location = new System.Drawing.Point(149, 67);
+            this.Vdod1.Name = "Vdod1";
+            this.Vdod1.Size = new System.Drawing.Size(131, 20);
+            this.Vdod1.TabIndex = 19;
+            this.Vdod1.TextChanged += new System.EventHandler(this.Vdod_Racun_Update);
             // 
             // label35
             // 
@@ -1193,24 +1201,23 @@
             this.textBox11.Size = new System.Drawing.Size(131, 20);
             this.textBox11.TabIndex = 18;
             // 
-            // textBox21
+            // Vdod_Racun
             // 
-            this.textBox21.Location = new System.Drawing.Point(149, 160);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(131, 20);
-            this.textBox21.TabIndex = 70;
-            this.textBox21.Text = "Racuna se";
+            this.Vdod_Racun.Location = new System.Drawing.Point(149, 160);
+            this.Vdod_Racun.Name = "Vdod_Racun";
+            this.Vdod_Racun.Size = new System.Drawing.Size(131, 20);
+            this.Vdod_Racun.TabIndex = 70;
             // 
-            // button1
+            // ispisBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(49, 458);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 67);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "ISPIS";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ispisBtn.BackColor = System.Drawing.Color.Red;
+            this.ispisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ispisBtn.Location = new System.Drawing.Point(49, 458);
+            this.ispisBtn.Name = "ispisBtn";
+            this.ispisBtn.Size = new System.Drawing.Size(99, 67);
+            this.ispisBtn.TabIndex = 18;
+            this.ispisBtn.Text = "ISPIS";
+            this.ispisBtn.UseVisualStyleBackColor = false;
             // 
             // InputForm
             // 
@@ -1218,16 +1225,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(994, 591);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ispisBtn);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.uLOutput);
+            this.Controls.Add(this.uOutput);
+            this.Controls.Add(this.ucOutput);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.richTextBox1);
             this.Name = "InputForm";
@@ -1299,16 +1306,16 @@
         private System.Windows.Forms.RichTextBox Radijus_Nesigurnost;
         private System.Windows.Forms.RichTextBox DubinaVode_Nesigurnost;
         private System.Windows.Forms.RichTextBox DuzinaCijevi_Nesigurnost;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ucOutput;
+        private System.Windows.Forms.TextBox uOutput;
+        private System.Windows.Forms.TextBox uLOutput;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Oplosje1;
+        private System.Windows.Forms.TextBox Oplosje2;
+        private System.Windows.Forms.TextBox Oplosje3;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -1316,13 +1323,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox VdopL;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Vdopmm;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox deltaV;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox deltaH;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
@@ -1330,18 +1337,18 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox Vdod1_MJN;
+        private System.Windows.Forms.TextBox Vdod1;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox VdodRacun_MJN;
+        private System.Windows.Forms.TextBox Vdod3_MJN;
+        private System.Windows.Forms.TextBox Vdod3;
         private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox Vdod2_MJN;
+        private System.Windows.Forms.TextBox Vdod2;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Vdod_Racun;
+        private System.Windows.Forms.Button ispisBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.TextBox textBox20;
