@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.0.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.0.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,22 +50,72 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DionicaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DionicaForm.Designer.cs">
+      <DependentUpon>DionicaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirstForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstForm.Designer.cs">
+      <DependentUpon>FirstForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainContainer.Designer.cs">
+      <DependentUpon>MainContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\OkrugloCijevModel.cs" />
+    <Compile Include="Models\OkrugloModel.cs" />
+    <Compile Include="Models\Dionice.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondForm.Designer.cs">
+      <DependentUpon>SecondForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\Dionice\DionicaOkrCijev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sections\Dionice\DionicaOkrCijev.Designer.cs">
+      <DependentUpon>DionicaOkrCijev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\Dionice\DionicaOkruglo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sections\Dionice\DionicaOkruglo.Designer.cs">
+      <DependentUpon>DionicaOkruglo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sections\InputForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sections\InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DionicaForm.resx">
+      <DependentUpon>DionicaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstForm.resx">
+      <DependentUpon>FirstForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainContainer.resx">
+      <DependentUpon>MainContainer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,9 +128,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SecondForm.resx">
+      <DependentUpon>SecondForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections\Dionice\DionicaOkrCijev.resx">
+      <DependentUpon>DionicaOkrCijev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections\Dionice\DionicaOkruglo.resx">
+      <DependentUpon>DionicaOkruglo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sections\InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="img\okruglo+cijev.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

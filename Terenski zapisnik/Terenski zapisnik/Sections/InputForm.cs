@@ -44,7 +44,7 @@ namespace Terenski_zapisnik.Sections
         }
 
         private void inputChange(object sender, EventArgs e){
-            if (Double.TryParse(Radijus.Text, out double num1) && Double.TryParse(DubinaVode.Text, out double num2) && Double.TryParse(DuzinaCijevi.Text, out double num3) && Double.TryParse(radijusCijevi.Text, out double num4))
+            if (Double.TryParse(Radijus.Text, out double num1) && Double.TryParse(DubinaVode.Text, out double n1um2) && Double.TryParse(DuzinaCijevi.Text, out double num3) && Double.TryParse(radijusCijevi.Text, out double num4))
             {
                 TextUpdate();
             }
@@ -53,6 +53,24 @@ namespace Terenski_zapisnik.Sections
         private void setStyles()
         {
             Radijus.SelectionAlignment = HorizontalAlignment.Center;
+            DubinaVode.SelectionAlignment = HorizontalAlignment.Center;
+            DuzinaCijevi.SelectionAlignment = HorizontalAlignment.Center;
+            radijusCijevi.SelectionAlignment = HorizontalAlignment.Center;
+
+            Radijus_M.SelectionAlignment = HorizontalAlignment.Center;
+            DubinaVode_M.SelectionAlignment = HorizontalAlignment.Center;
+            duzinaCijevi_M.SelectionAlignment = HorizontalAlignment.Center;
+            radijusCijevi_M.SelectionAlignment = HorizontalAlignment.Center;
+
+            Radijus_Root3.SelectionAlignment = HorizontalAlignment.Center;
+            DubinaVode_Root3.SelectionAlignment = HorizontalAlignment.Center;
+            DuzinaCijevi_Root3.SelectionAlignment = HorizontalAlignment.Center;
+            radijusCijevi_Root3.SelectionAlignment = HorizontalAlignment.Center;
+
+            Radijus_Nesigurnost.SelectionAlignment = HorizontalAlignment.Center;
+            DubinaVode_Nesigurnost.SelectionAlignment = HorizontalAlignment.Center;
+            DuzinaCijevi_Nesigurnost.SelectionAlignment = HorizontalAlignment.Center;
+            radijusCijevi_Nesigurnost.SelectionAlignment = HorizontalAlignment.Center;
         }
         #endregion
         private void TextUpdate()

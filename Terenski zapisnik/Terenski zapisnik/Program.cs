@@ -16,7 +16,8 @@ namespace Terenski_zapisnik
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            //Application.Run(new MainContainer());
+            Application.Run(new DionicaForm());
         }
     }
 }
