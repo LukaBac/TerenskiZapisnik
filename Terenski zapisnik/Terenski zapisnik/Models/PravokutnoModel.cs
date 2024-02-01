@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Terenski_zapisnik.Models
 {
-    public class OkrugloModel : Dionice
+    public class PravokutnoModel
     {
         #region StartValues
+        public double Š { get; set; }
 
-        public double R { get; set; } = 0;
+        public double d { get; set; }
 
-        public double H { get; set; } = 0;
+        public double H { get; set; }
 
         public double IspitniTlak { get; set; }
         public string VrijemePoc { get; set; }
@@ -22,16 +23,17 @@ namespace Terenski_zapisnik.Models
 
         public Image Image { get; set; }
 
+
         #endregion
 
-
         #region HelperValues
-        const double R_Nesigurnost = 0.002;
-        const double H_Nesigurnost = 0.001;
+        const double Š_Nesigurnost = 0.00052;
+        const double d_Nesigurnost = 0.00052;
+        const double H_Nesigurnost = 0.000462;
 
 
 
-        private double uC { get; set; } = Math.Pow(Math.Pow(R_Nesigurnost, 2) + Math.Pow(H_Nesigurnost, 2), 0.5);
+        private double uC { get; set; } = Math.Pow(Math.Pow(Š_Nesigurnost, 2) + Math.Pow(d_Nesigurnost, 2) + Math.Pow(H_Nesigurnost, 2), 0.5);
 
 
         public string DionicaNaziv { get; set; }
@@ -40,16 +42,16 @@ namespace Terenski_zapisnik.Models
 
         #endregion
 
+
         public void Output(DionicaModel dionica)
         {
             dionica.StartTime = VrijemePoc;
             dionica.EndTime = VrijemeEnd;
             dionica.IspitniTlak = IspitniTlak;
             dionica.VIzmjereno = VIzmjereno;
-            dionica.OmocenoOplosje = 2 * R * Math.PI * H + Math.Pow(R, 2) * Math.PI;
+            dionica.OmocenoOplosje = (2 * Š + 2 * d) * H + Š * d;
             dionica.Vdopusteno = ((uC * 2) + dionica.OmocenoOplosje) * 0.4;
             dionica.Image = Image;
-
             dionica.DionicaNaziv = DionicaNaziv;
             dionica.DionicaPromjer = DionicaPromjer;
             dionica.DionicaMaterijal = DionicaMaterijal;

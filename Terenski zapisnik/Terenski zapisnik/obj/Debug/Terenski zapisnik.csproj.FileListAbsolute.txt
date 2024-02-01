@@ -45,3 +45,5 @@ F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Debug\Do
 F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.csproj.CopyComplete
 F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.DionicaOkruglo.resources
 F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.DionicaOkrCijev.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.Dionice.DionicaPravokutno.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.Dionice.DionicaPravokutnoCijev.resources

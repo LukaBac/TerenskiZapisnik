@@ -23,6 +23,17 @@ namespace Terenski_zapisnik
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
+            #region Setting Values
+
+            ProjectModel.Kupac = KupacTextBox.Text;
+            ProjectModel.Lokacija = LokacijaTextBox.Text;
+            ProjectModel.RadniNalog = RadniNalogTextBox.Text;
+            ProjectModel.Datum = DateTime.Parse(DatumTextBox.Text);
+            ProjectModel.Ispitivac = IspitivacTextBox.Text;
+            ProjectModel.Voditelj = VoditeljTextBox.Text;
+
+            #endregion
+
             Panel mainPanel = (Panel)this.Parent;
 
             Form form = new DionicaForm();

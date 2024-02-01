@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.DionicaNameTextBox = new System.Windows.Forms.TextBox();
             this.Pravokutno2Btn = new System.Windows.Forms.Button();
             this.PravokutnoBtn = new System.Windows.Forms.Button();
             this.OkrugloCijevBtn = new System.Windows.Forms.Button();
             this.OkrugloBtn = new System.Windows.Forms.Button();
-            this.projectNameLabel = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.AddDionicaBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.projectNameLabel = new System.Windows.Forms.TextBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DeleteFormBtn = new System.Windows.Forms.Button();
             this.dionicaPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.DionicaNameTextBox = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,6 +60,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(993, 87);
             this.panel3.TabIndex = 9;
+            // 
+            // DionicaNameTextBox
+            // 
+            this.DionicaNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(82)))), ((int)(((byte)(166)))));
+            this.DionicaNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DionicaNameTextBox.Font = new System.Drawing.Font("Montserrat Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DionicaNameTextBox.ForeColor = System.Drawing.Color.White;
+            this.DionicaNameTextBox.Location = new System.Drawing.Point(16, 28);
+            this.DionicaNameTextBox.Name = "DionicaNameTextBox";
+            this.DionicaNameTextBox.Size = new System.Drawing.Size(155, 24);
+            this.DionicaNameTextBox.TabIndex = 10;
+            this.DionicaNameTextBox.Text = "Ime Dionice";
+            this.DionicaNameTextBox.TextChanged += new System.EventHandler(this.DionicaNameTextBox_TextChanged);
             // 
             // Pravokutno2Btn
             // 
@@ -124,18 +138,6 @@
             this.OkrugloBtn.UseVisualStyleBackColor = false;
             this.OkrugloBtn.Click += new System.EventHandler(this.NavButtonClick);
             // 
-            // projectNameLabel
-            // 
-            this.projectNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.projectNameLabel.AutoSize = true;
-            this.projectNameLabel.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectNameLabel.ForeColor = System.Drawing.Color.White;
-            this.projectNameLabel.Location = new System.Drawing.Point(40, 29);
-            this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(102, 26);
-            this.projectNameLabel.TabIndex = 0;
-            this.projectNameLabel.Text = "Terenski";
-            // 
             // SaveBtn
             // 
             this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(66)))));
@@ -143,9 +145,9 @@
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(1, 580);
+            this.SaveBtn.Location = new System.Drawing.Point(0, 580);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(184, 64);
+            this.SaveBtn.Size = new System.Drawing.Size(184, 82);
             this.SaveBtn.TabIndex = 6;
             this.SaveBtn.Text = "Spremi";
             this.SaveBtn.UseVisualStyleBackColor = false;
@@ -175,6 +177,19 @@
             this.panel2.Size = new System.Drawing.Size(185, 87);
             this.panel2.TabIndex = 8;
             // 
+            // projectNameLabel
+            // 
+            this.projectNameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(87)))));
+            this.projectNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.projectNameLabel.Font = new System.Drawing.Font("Montserrat Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.projectNameLabel.ForeColor = System.Drawing.Color.White;
+            this.projectNameLabel.Location = new System.Drawing.Point(3, 28);
+            this.projectNameLabel.Name = "projectNameLabel";
+            this.projectNameLabel.Size = new System.Drawing.Size(179, 23);
+            this.projectNameLabel.TabIndex = 11;
+            this.projectNameLabel.Text = "ImeProjekta";
+            this.projectNameLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // mainPanel
             // 
             this.mainPanel.AutoScroll = true;
@@ -187,6 +202,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(66)))));
+            this.panel1.Controls.Add(this.DeleteFormBtn);
             this.panel1.Controls.Add(this.dionicaPanel);
             this.panel1.Controls.Add(this.SaveBtn);
             this.panel1.Controls.Add(this.AddDionicaBtn);
@@ -195,6 +211,21 @@
             this.panel1.Size = new System.Drawing.Size(185, 665);
             this.panel1.TabIndex = 6;
             // 
+            // DeleteFormBtn
+            // 
+            this.DeleteFormBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(66)))));
+            this.DeleteFormBtn.FlatAppearance.BorderSize = 0;
+            this.DeleteFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteFormBtn.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteFormBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteFormBtn.Location = new System.Drawing.Point(0, 510);
+            this.DeleteFormBtn.Name = "DeleteFormBtn";
+            this.DeleteFormBtn.Size = new System.Drawing.Size(184, 52);
+            this.DeleteFormBtn.TabIndex = 8;
+            this.DeleteFormBtn.Text = "Obriši Dionicu";
+            this.DeleteFormBtn.UseVisualStyleBackColor = false;
+            this.DeleteFormBtn.Click += new System.EventHandler(this.DeleteFormBtn_Click);
+            // 
             // dionicaPanel
             // 
             this.dionicaPanel.Location = new System.Drawing.Point(0, 109);
@@ -202,19 +233,6 @@
             this.dionicaPanel.Name = "dionicaPanel";
             this.dionicaPanel.Size = new System.Drawing.Size(185, 238);
             this.dionicaPanel.TabIndex = 7;
-            // 
-            // DionicaNameTextBox
-            // 
-            this.DionicaNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(82)))), ((int)(((byte)(166)))));
-            this.DionicaNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DionicaNameTextBox.Font = new System.Drawing.Font("Montserrat Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DionicaNameTextBox.ForeColor = System.Drawing.Color.White;
-            this.DionicaNameTextBox.Location = new System.Drawing.Point(16, 28);
-            this.DionicaNameTextBox.Name = "DionicaNameTextBox";
-            this.DionicaNameTextBox.Size = new System.Drawing.Size(155, 24);
-            this.DionicaNameTextBox.TabIndex = 10;
-            this.DionicaNameTextBox.Text = "Ime Dionice";
-            this.DionicaNameTextBox.TextChanged += new System.EventHandler(this.DionicaNameTextBox_TextChanged);
             // 
             // DionicaForm
             // 
@@ -238,7 +256,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label projectNameLabel;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button AddDionicaBtn;
         private System.Windows.Forms.Panel panel2;
@@ -250,5 +267,7 @@
         private System.Windows.Forms.Button OkrugloCijevBtn;
         private System.Windows.Forms.FlowLayoutPanel dionicaPanel;
         private System.Windows.Forms.TextBox DionicaNameTextBox;
+        private System.Windows.Forms.TextBox projectNameLabel;
+        private System.Windows.Forms.Button DeleteFormBtn;
     }
 }

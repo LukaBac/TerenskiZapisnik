@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Terenski_zapisnik.Models
 {
     public class Dionice
     {
-        public static List<OkrugloModel> dionice = new List<OkrugloModel>();
-
-        public string DionicaName { get; set; }
+        public static List<Dionica> dionice = new List<Dionica>();
 
         public static int activeIndex { get; set; }
-
-        //public string DionicaTip { get; set; }
     }
 }

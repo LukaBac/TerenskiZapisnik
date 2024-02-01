@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using Terenski_zapisnik.Sections.Dionice;
 
 namespace Terenski_zapisnik
 {
@@ -39,15 +40,8 @@ namespace Terenski_zapisnik
 
         private void AddDionicaBtn_Click(object sender, EventArgs e)
         {
-            //Form form = new Dionica();
-            //form.TopLevel = false;
-            //form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //form.Dock = DockStyle.Fill;
-            //form.Show();
 
-            //mainPanel.Controls.Clear();
-            //mainPanel.Controls.Add(form);
-
+            #region AddButton
             Button btn = new Button();
             btn.Size = new Size(184, 64);
             btn.Click += new System.EventHandler(this.DionicaBtn_Click);
@@ -57,28 +51,63 @@ namespace Terenski_zapisnik
             btn.ForeColor = System.Drawing.Color.White;
             btn.Text = $"Dionica {Dionice.dionice.Count() + 1}";
             btn.FlatAppearance.BorderSize = 0;
+            #endregion
 
-            Dionice.dionice.Add(new OkrugloModel(btn.Text, "OkrugloBtn"));
+            #region AddForm
+
+            Form form = new Form();
+
+            switch (checkedBtn)
+            {
+                case "OkrugloBtn":
+                    form = new DionicaOkruglo();
+                    break;
+                case "OkrugloCijevBtn":
+                    form = new DionicaOkrCijev();
+                    break;
+                case "PravokutnoBtn":
+                    form = new DionicaPravokutno();
+                    break;
+                case "Pravokutno2Btn":
+                    form = new DionicaPravokutnoCijev();
+                    break;
+                default:
+                    form = new DionicaOkruglo();
+                    break;
+            }
+
+            form.TopLevel = false;
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+
+            if (checkedBtn != "")
+            {
+                Dionice.dionice.Add(new Dionica(btn.Text, checkedBtn, form, new DionicaModel()));
+            }
+
+            else
+            {
+                Dionice.dionice.Add(new Dionica(btn.Text, "OkrugloBtn", form, new DionicaModel()));
+            }
             dionicaPanel.Controls.Add(btn);
+            #endregion
         }
 
         private void DionicaBtn_Click(object sender, EventArgs e)
         {
-            //Form form = new Dionica2();
-            //addForm(form);
-
-            //OkrugloBtn.PerformClick();
-
             Button clickedBtn = (Button)sender;
-            //activeIndex = dionicaPanel.Controls.IndexOf(clickedBtn);
             Dionice.activeIndex = dionicaPanel.Controls.IndexOf(clickedBtn);
             DionicaNameTextBox.Text = clickedBtn.Text;
-            //Dionice.dionice[index];
+
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(Dionice.dionice[Dionice.activeIndex].Forma);
+
             foreach (Button b in NavButtons)
             {
-                if (b.Name == Dionice.dionice[Dionice.activeIndex].DionicaTip)
+                if (b.Name == Dionice.dionice[Dionice.activeIndex].Type)
                 {
-                    b.PerformClick();
+                    setNavButton(b);
                 }
             }
 
@@ -100,78 +129,106 @@ namespace Terenski_zapisnik
 
             if (checkedBtn != clickedBtn.Name)
             {
-                clickedBtn.BackColor = System.Drawing.Color.White;
-                clickedBtn.ForeColor = System.Drawing.Color.Black;
+                setNavButton(clickedBtn);
 
-                checkedBtn = clickedBtn.Name;
-
-                foreach (Button btn in NavButtons)
-                {
-                    if (btn != clickedBtn)
-                    {
-                        //btn.BackColor = Color.FromArgb(38, 43, 66, 255);
-                        btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(82)))), ((int)(((byte)(166)))));
-                        btn.ForeColor = System.Drawing.Color.White;
-                    }
-                }
-
-                Form form = null;
+                Form form = new Form();
                 switch (checkedBtn)
                 {
                     case "OkrugloBtn":
                         form = new DionicaOkruglo();
-                        Dionice.dionice[Dionice.activeIndex] = null;
-                        Dionice.dionice[Dionice.activeIndex] = new OkrugloModel(DionicaNameTextBox.Text, "OkrugloBtn");
                         break;
                     case "OkrugloCijevBtn":
                         form = new DionicaOkrCijev();
-                        Dionice.dionice[Dionice.activeIndex] = null;
-                        Dionice.dionice[Dionice.activeIndex] = new OkrugloModel(DionicaNameTextBox.Text, "OkrugloBtn");
+                        break;
+                    case "PravokutnoBtn":
+                        form = new DionicaPravokutno();
+                        break;
+                    case "Pravokutno2Btn":
+                        form = new DionicaPravokutnoCijev();
                         break;
                     default:
-                        form = new DionicaOkrCijev();
-                        Dionice.dionice[Dionice.activeIndex].DionicaTip = "OkrugloCijevBtn";
+                        form = new DionicaOkruglo();
                         break;
                 }
-                addForm(form);
+                form.TopLevel = false;
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+
+                if (mainPanel.Controls.Count == 0)
+                {
+                    AddDionicaBtn.PerformClick();
+                    DionicaNameTextBox.Text = dionicaPanel.Controls[Dionice.activeIndex].Text;
+                }
+                else if(Dionice.dionice.Count != 0 && mainPanel.Controls.Count != 0)
+                {
+                    Dionice.dionice[Dionice.activeIndex].Type = checkedBtn;
+                    Dionice.dionice[Dionice.activeIndex].Forma = form;
+                    Dionice.dionice[Dionice.activeIndex].DionicaModel = new DionicaModel();
+                }
+                mainPanel.Controls.Clear();
+                mainPanel.Controls.Add(form);
             }
         }
 
+        private void setNavButton(Button clickedBtn)
+        {
+            clickedBtn.BackColor = System.Drawing.Color.White;
+            clickedBtn.ForeColor = System.Drawing.Color.Black;
+
+            checkedBtn = clickedBtn.Name;
+
+            foreach (Button btn in NavButtons)
+            {
+                if (btn != clickedBtn)
+                {
+                    btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(82)))), ((int)(((byte)(166)))));
+                    btn.ForeColor = System.Drawing.Color.White;
+                }
+            }
+        }
+
+
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Word Documents|*.docx";
-            saveFileDialog.Title = "Spremi zapis";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-
-                // Create a .docx file
-                using (WordprocessingDocument wordDocument = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
-                {
-                    MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
-                    mainPart.Document = new Document();
-                    DocumentFormat.OpenXml.Wordprocessing.Body body = new DocumentFormat.OpenXml.Wordprocessing.Body();
-                    Paragraph paragraph = new Paragraph(new Run(new DocumentFormat.OpenXml.Wordprocessing.Text("Hello, this is a sample document.")));
-                    body.Append(paragraph);
-                    mainPart.Document.Append(body);
-                }
-
-                MessageBox.Show($"File saved successfully: {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Dionice.dionice[Dionice.activeIndex].DionicaModel.Ispis();
         }
 
         private void DionicaNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (dionicaPanel.Controls.Count != 0)
+            if (dionicaPanel.Controls.Count != 0 && mainPanel.Controls.Count != 0)
             {
                 dionicaPanel.Controls[Dionice.activeIndex].Text = DionicaNameTextBox.Text;
+                Dionice.dionice[Dionice.activeIndex].Name = DionicaNameTextBox.Text;
             }
 
             if (DionicaNameTextBox.Text == "")
             {
                 DionicaNameTextBox.Focus();
+            }
+        }
+
+        private void DeleteFormBtn_Click(object sender, EventArgs e)
+        {
+            if (Dionice.dionice.Count != 0)
+            {
+                mainPanel.Controls.Clear();
+                Dionice.dionice.RemoveAt(Dionice.activeIndex);
+                dionicaPanel.Controls.RemoveAt(Dionice.activeIndex);
+                DionicaNameTextBox.Text = "";
+                if (Dionice.activeIndex != 0)
+                {
+                    Dionice.activeIndex = dionicaPanel.Controls.Count - 1;
+                }
+                mainPanel.Focus();
+                #region resetNavButton
+                foreach (Button btn in NavButtons)
+                {
+                    btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(82)))), ((int)(((byte)(166)))));
+                    btn.ForeColor = System.Drawing.Color.White;
+                    checkedBtn = "";
+                }
+                #endregion
             }
         }
     }
