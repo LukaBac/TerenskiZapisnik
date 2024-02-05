@@ -145,7 +145,7 @@
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(0, 580);
+            this.SaveBtn.Location = new System.Drawing.Point(0, 570);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(184, 82);
             this.SaveBtn.TabIndex = 6;
@@ -185,6 +185,7 @@
             this.projectNameLabel.ForeColor = System.Drawing.Color.White;
             this.projectNameLabel.Location = new System.Drawing.Point(3, 28);
             this.projectNameLabel.Name = "projectNameLabel";
+            this.projectNameLabel.ReadOnly = true;
             this.projectNameLabel.Size = new System.Drawing.Size(179, 23);
             this.projectNameLabel.TabIndex = 11;
             this.projectNameLabel.Text = "ImeProjekta";

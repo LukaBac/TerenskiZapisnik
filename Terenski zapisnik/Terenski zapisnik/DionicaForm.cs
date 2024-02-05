@@ -210,7 +210,7 @@ namespace Terenski_zapisnik
 
         private void DeleteFormBtn_Click(object sender, EventArgs e)
         {
-            if (Dionice.dionice.Count != 0)
+            if (Dionice.dionice.Count != 0 && mainPanel.Controls.Count > 0)
             {
                 mainPanel.Controls.Clear();
                 Dionice.dionice.RemoveAt(Dionice.activeIndex);

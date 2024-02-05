@@ -13,6 +13,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using DW = DocumentFormat.OpenXml.Drawing.Wordprocessing;
 using A = DocumentFormat.OpenXml.Drawing;
 using PIC = DocumentFormat.OpenXml.Drawing.Pictures;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Terenski_zapisnik.Models
 {
@@ -41,59 +42,84 @@ namespace Terenski_zapisnik.Models
 
         public void Ispis()
         {
-                // Replace "YourTemplatePath.docx" with the path to your Word template
-                string templatePath = "TemplateNew(2).docx";
+            // Replace "YourTemplatePath.docx" with the path to your Word template
+            string templatePath = "TemplateNew(2).docx";
+            string dionicaTemplatePath = "DionicaTemplate.docx";
 
 
-                // Open the Word document from the template
+            // Open the Word document from the template
 
-
-                using (WordprocessingDocument templateDoc = WordprocessingDocument.Open(templatePath, true))
+            //projekt output       
+            using (WordprocessingDocument templateDoc = WordprocessingDocument.Open(templatePath, true))
+            {
+                // Show the save file dialog to get the output path from the user
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    // Show the save file dialog to get the output path from the user
-                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
+                    saveFileDialog.Title = "Save As";
+                    saveFileDialog.FileName = "OutputDocument";
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
-                        saveFileDialog.Title = "Save As";
-                        saveFileDialog.FileName = "OutputDocument";
+                        string outputPath = saveFileDialog.FileName;
 
-                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        // Clone the template document to create a new one
+                        using (WordprocessingDocument outputDoc = templateDoc.Clone(outputPath))
                         {
-                            string outputPath = saveFileDialog.FileName;
+                            //Projekt
+                            ReplaceTextAtBookmark(outputDoc, "Kupac", ProjectModel.Kupac);
+                            ReplaceTextAtBookmark(outputDoc, "Lokacija", ProjectModel.Lokacija);
+                            ReplaceTextAtBookmark(outputDoc, "RadniNalog", ProjectModel.RadniNalog);
+                            ReplaceTextAtBookmark(outputDoc, "Datum", ProjectModel.Datum.ToString("dd.MM.yyyy"));
+                            ReplaceTextAtBookmark(outputDoc, "RedniBr", "1.");
 
-                            // Clone the template document to create a new one
-                            using (WordprocessingDocument outputDoc = templateDoc.Clone(outputPath))
+
+
+                            //ReplaceTextAtBookmark(outputDoc, "Bookmark2", "Text for Bookmark2");
+                            Console.WriteLine($"Document saved successfully to: {outputPath}");
+                        }
+                    }
+                }
+            }
+
+            //dionicaoutput
+            using (WordprocessingDocument templateDoc = WordprocessingDocument.Open(dionicaTemplatePath, true))
+            {
+                // Show the save file dialog to get the output path from the user
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
+                    saveFileDialog.Title = "Save As";
+                    saveFileDialog.FileName = "OutputDocument";
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string outputPath = saveFileDialog.FileName;
+
+                        // Clone the template document to create a new one
+                        using (WordprocessingDocument outputDoc = templateDoc.Clone(outputPath))
+                        {
+                            //Dionica
+                            ReplaceTextAtBookmark(outputDoc, "Oplosje", Math.Round(OmocenoOplosje, 2).ToString());
+                            ReplaceTextAtBookmark(outputDoc, "Vdop", Math.Round(Vdopusteno, 2).ToString());
+                            ReplaceTextAtBookmark(outputDoc, "VrijemePoc", StartTime);
+                            ReplaceTextAtBookmark(outputDoc, "VrijemeEnd", EndTime);
+                            ReplaceTextAtBookmark(outputDoc, "VIzmj", VIzmjereno.ToString());
+                            ReplaceTextAtBookmark(outputDoc, "VIzmjereno", VIzmjereno.ToString());
+                            ReplaceTextAtBookmark(outputDoc, "IspitniTlak", IspitniTlak.ToString());
+
+
+
+                            if (VIzmjereno <= Vdopusteno)
                             {
-                                //Dionica
-                                ReplaceTextAtBookmark(outputDoc, "Oplosje", Math.Round(OmocenoOplosje, 2).ToString());
-                                ReplaceTextAtBookmark(outputDoc, "Vdop", Math.Round(Vdopusteno, 2).ToString());
-                                ReplaceTextAtBookmark(outputDoc, "VrijemePoc", StartTime);
-                                ReplaceTextAtBookmark(outputDoc, "VrijemeEnd", EndTime);
-                                ReplaceTextAtBookmark(outputDoc, "VIzmj", VIzmjereno.ToString());
-                                ReplaceTextAtBookmark(outputDoc, "VIzmjereno", VIzmjereno.ToString());
-                                ReplaceTextAtBookmark(outputDoc, "IspitniTlak", IspitniTlak.ToString());
-
-
-                                //Projekt
-                                ReplaceTextAtBookmark(outputDoc, "Kupac", ProjectModel.Kupac);
-                                ReplaceTextAtBookmark(outputDoc, "KupacDole", ProjectModel.Kupac);
-                                ReplaceTextAtBookmark(outputDoc, "Lokacija", ProjectModel.Lokacija);
-                                ReplaceTextAtBookmark(outputDoc, "RadniNalog", ProjectModel.RadniNalog);
-                                ReplaceTextAtBookmark(outputDoc, "Datum", ProjectModel.Datum.ToString("dd.MM.yyyy"));
-                                ReplaceTextAtBookmark(outputDoc, "RedniBr", "1.");
-                                ReplaceTextAtBookmark(outputDoc, "Ispitivac", ProjectModel.Ispitivac);
-                                ReplaceTextAtBookmark(outputDoc, "Voditelj", ProjectModel.Voditelj);
-
-                                if (VIzmjereno <= Vdopusteno)
-                                {
-                                    ReplaceTextAtBookmark(outputDoc, "Y", "X");
-                                    ReplaceTextAtBookmark(outputDoc, "N", "");
-                                }
-                                else
-                                {
-                                    ReplaceTextAtBookmark(outputDoc, "Y", "");
-                                    ReplaceTextAtBookmark(outputDoc, "N", "X");
-                                }
+                                ReplaceTextAtBookmark(outputDoc, "Y", "X");
+                                ReplaceTextAtBookmark(outputDoc, "N", "");
+                            }
+                            else
+                            {
+                                ReplaceTextAtBookmark(outputDoc, "Y", "");
+                                ReplaceTextAtBookmark(outputDoc, "N", "X");
+                            }
 
                             //if (Image != null)
                             //{
@@ -101,13 +127,27 @@ namespace Terenski_zapisnik.Models
                             //}
 
                             ReplaceTextAtBookmark(outputDoc, "DionicaInfo", $"{DionicaNaziv}, {DionicaMaterijal}, {DionicaPromjer}");
-
-                            //ReplaceTextAtBookmark(outputDoc, "Bookmark2", "Text for Bookmark2");
-                            Console.WriteLine($"Document saved successfully to: {outputPath}");
-                            }
+                        //ReplaceTextAtBookmark(outputDoc, "Bookmark2", "Text for Bookmark2");
+                        Console.WriteLine($"Document saved successfully to: {outputPath}");
                         }
                     }
                 }
+            }
+
+
+            using (WordprocessingDocument existingDoc = WordprocessingDocument.Open(templatePath, true))
+            using (WordprocessingDocument mainDoc = WordprocessingDocument.Create(dionicaTemplatePath, WordprocessingDocumentType.Document))
+            {
+                MainDocumentPart mainPart = mainDoc.AddMainDocumentPart();
+                Document document = new Document();
+                mainPart.Document = document;
+
+                // Create a body for the main document
+                DocumentFormat.OpenXml.Wordprocessing.Body body = new DocumentFormat.OpenXml.Wordprocessing.Body();
+                document.Append(body);
+
+                CopyContent(existingDoc, body);
+            }
         }
 
         static void ReplaceTextAtBookmark(WordprocessingDocument doc, string bookmarkName, string newText)
@@ -146,6 +186,16 @@ namespace Terenski_zapisnik.Models
             else
             {
                 Console.WriteLine($"Bookmark '{bookmarkName}' not found.");
+            }
+        }
+
+        static void CopyContent(WordprocessingDocument sourceDoc, OpenXmlElement destination)
+        {
+            // Iterate through the body elements of the source document and copy them to the destination
+            foreach (var element in sourceDoc.MainDocumentPart.Document.Body.Elements())
+            {
+                var clonedElement = element.CloneNode(true);
+                destination.AppendChild(clonedElement);
             }
         }
 
