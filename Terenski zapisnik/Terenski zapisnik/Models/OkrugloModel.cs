@@ -7,18 +7,25 @@ using System.Threading.Tasks;
 
 namespace Terenski_zapisnik.Models
 {
-    public class OkrugloModel : Dionice
+    public class OkrugloModel : IModel
     {
         #region StartValues
+
+        public string R_Text { get; set; }
+
+        public string H_Text { get; set; }
+
+        public string IspitniTlak_Text { get; set; }
+        public string VIzmjereno_Text { get; set; }
 
         public double R { get; set; } = 0;
 
         public double H { get; set; } = 0;
 
         public double IspitniTlak { get; set; }
+        public double VIzmjereno { get; set; }
         public string VrijemePoc { get; set; }
         public string VrijemeEnd { get; set; }
-        public double VIzmjereno { get; set; }
 
         public Image Image { get; set; }
 
@@ -40,8 +47,74 @@ namespace Terenski_zapisnik.Models
 
         #endregion
 
-        public void Output(DionicaModel dionica)
+        public bool Output(DionicaModel dionica)
         {
+            if (VrijemePoc == "" || VrijemePoc == null)
+            {
+                ProjectModel.RunError($"Prazno polje \"Vrijeme Početak\"");
+                return false;
+            }
+            if (VrijemeEnd == "" || VrijemeEnd == null)
+            {
+                ProjectModel.RunError($"Prazno polje \"Vrijeme Kraj\"");
+                return false;
+            }
+            if (DionicaNaziv == "" || DionicaNaziv == null)
+            {
+                ProjectModel.RunError($"Prazno polje \"Naziv Dionice\"");
+                return false;
+            }
+            if (DionicaPromjer == "" || DionicaPromjer == null)
+            {
+                ProjectModel.RunError($"Prazno polje \"Promjer\"");
+                return false;
+            }
+            if (DionicaMaterijal == "" || DionicaMaterijal == null)
+            {
+                ProjectModel.RunError($"Prazno polje \"Materijal\"");
+                return false;
+            }
+
+            if (double.TryParse(R_Text, out double num))
+            {
+                R = num;
+            }
+            else
+            {
+                ProjectModel.InputError(nameof(R));
+                return false;
+            }
+
+            if (double.TryParse(H_Text, out double num1))
+            {
+                H = num1;
+            }
+            else
+            {
+                ProjectModel.InputError(nameof(H));
+                return false;
+            }
+
+            if (double.TryParse(VIzmjereno_Text, out double num3))
+            {
+                VIzmjereno = num3;
+            }
+            else
+            {
+                ProjectModel.InputError(nameof(VIzmjereno));
+                return false;
+            }
+
+            if (double.TryParse(IspitniTlak_Text, out double num4))
+            {
+                IspitniTlak = num3;
+            }
+            else
+            {
+                ProjectModel.InputError(nameof(IspitniTlak));
+                return false;
+            }
+
             dionica.StartTime = VrijemePoc;
             dionica.EndTime = VrijemeEnd;
             dionica.IspitniTlak = IspitniTlak;
@@ -53,6 +126,7 @@ namespace Terenski_zapisnik.Models
             dionica.DionicaNaziv = DionicaNaziv;
             dionica.DionicaPromjer = DionicaPromjer;
             dionica.DionicaMaterijal = DionicaMaterijal;
+            return true;
         }
     }
 }

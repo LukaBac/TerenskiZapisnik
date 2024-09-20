@@ -73,6 +73,7 @@
             this.DionicaNameTextBox.TabIndex = 10;
             this.DionicaNameTextBox.Text = "Ime Dionice";
             this.DionicaNameTextBox.TextChanged += new System.EventHandler(this.DionicaNameTextBox_TextChanged);
+            this.DionicaNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DionicaNameKeyPress);
             // 
             // Pravokutno2Btn
             // 

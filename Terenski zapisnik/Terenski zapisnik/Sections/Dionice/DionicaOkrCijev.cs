@@ -11,7 +11,7 @@ using Terenski_zapisnik.Models;
 
 namespace Terenski_zapisnik.Sections
 {
-    public partial class DionicaOkrCijev : Form
+    public partial class DionicaOkrCijev : Form, IForm
     {
 
         OkrugloCijevModel OkrugloCijevModel = new OkrugloCijevModel();
@@ -19,93 +19,57 @@ namespace Terenski_zapisnik.Sections
         public DionicaOkrCijev()
         {
             InitializeComponent();
+
+            OkrugloCijevModel.Image = pictureBox1.Image;
         }
 
-
-
-
-
-        //private void TextChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        OkrugloCijevModel.R = Convert.ToDouble(R_textBox.Text);
-        //        OkrugloCijevModel.L = Convert.ToDouble(L_textBox.Text);
-        //        OkrugloCijevModel.H = Convert.ToDouble(H_textBox.Text);
-        //        OkrugloCijevModel.r = Convert.ToDouble(R2_textBox.Text);
-
-        //        OkrugloCijevModel.IspitniTlak = Convert.ToDouble(TlakTextBox.Text);
-        //        OkrugloCijevModel.VIzmjereno = Convert.ToDouble(VizmjerenoTextBox.Text);
-
-        //        OkrugloCijevModel.VrijemePoc = StartTimeTextBox.Text;
-        //        OkrugloCijevModel.VrijemeEnd = EndTimeTextBox.Text;
-        //    }
-        //    catch
-        //    {
-
-        //    }
-
-        //    if (R_textBox.Text != "" && L_textBox.Text != "" && R2_textBox.Text != "" && H_textBox.Text != "" && TlakTextBox.Text != "" && VizmjerenoTextBox.Text != "" && StartTimeTextBox.Text != "" && EndTimeTextBox.Text != "" && !R_textBox.Focused && !L_textBox.Focused && !R2_textBox.Focused && !H_textBox.Focused && !TlakTextBox.Focused && !VizmjerenoTextBox.Focused && !StartTimeTextBox.Focused && !EndTimeTextBox.Focused)
-        //    {
-        //        OkrugloCijevModel.Output(Terenski_zapisnik.Models.Dionice.dionice[Terenski_zapisnik.Models.Dionice.activeIndex].DionicaModel);
-        //    }
-        //}
+        private void KeyPressValidation(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is not a digit or is not the backspace key
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
+            {
+                // Mark the event as handled to prevent the character from being entered
+                e.Handled = true;
+            }
+        }
 
         private void LostFocus(object sender, EventArgs e)
         {
-            if (R_textBox.Text != "" && H_textBox.Text != "" && L_textBox.Text != "" && R2_textBox.Text != "" && VizmjerenoTextBox.Text != "" && TlakTextBox.Text != "" && StartTimeTextBox.Text != "" && EndTimeTextBox.Text != "" && NazivDioniceTextBox.Text != "" && PromjerTextBox.Text != "" && MaterijalTextBox.Text != "")
-            {
-                OkrugloCijevModel.Image = pictureBox1.Image;
-                OkrugloCijevModel.Output(Terenski_zapisnik.Models.Dionice.dionice[Terenski_zapisnik.Models.Dionice.activeIndex].DionicaModel);
-            }
+            //if (R_textBox.Text != "" && H_textBox.Text != "" && L_textBox.Text != "" && R2_textBox.Text != "" && VizmjerenoTextBox.Text != "" && TlakTextBox.Text != "" && StartTimeTextBox.Text != "" && EndTimeTextBox.Text != "" && NazivDioniceTextBox.Text != "" && PromjerTextBox.Text != "" && MaterijalTextBox.Text != "")
+            //{
+            //    OkrugloCijevModel.Image = pictureBox1.Image;
+            //    OkrugloCijevModel.Output(Terenski_zapisnik.Models.Dionice.dionice[Terenski_zapisnik.Models.Dionice.activeIndex].DionicaModel);
+            //}
         }
 
         private void R_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(R_textBox.Text, out double R))
-            {
-                OkrugloCijevModel.R = R;
-            }
+            OkrugloCijevModel.R_Text = R_textBox.Text;
         }
 
         private void H_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(H_textBox.Text, out double H))
-            {
-                OkrugloCijevModel.H = H;
-            }
+            OkrugloCijevModel.H_Text = H_textBox.Text;
         }
 
         private void L_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(L_textBox.Text, out double L))
-            {
-                OkrugloCijevModel.L = L;
-            }
+            OkrugloCijevModel.L_Text = L_textBox.Text;
         }
 
         private void R2_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(R2_textBox.Text, out double R2))
-            {
-                OkrugloCijevModel.r = R2;
-            }
+            OkrugloCijevModel.r_Text = R2_textBox.Text;
         }
 
         private void VizmjerenoTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(VizmjerenoTextBox.Text, out double VIzmj))
-            {
-                OkrugloCijevModel.VIzmjereno = VIzmj;
-            }
+            OkrugloCijevModel.VIzmjereno_Text = VizmjerenoTextBox.Text;
         }
 
         private void TlakTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(TlakTextBox.Text, out double Tlak))
-            {
-                OkrugloCijevModel.IspitniTlak = Tlak;
-            }
+            OkrugloCijevModel.IspitniTlak_Text = TlakTextBox.Text;
         }
 
         private void StartTimeTextBox_TextChanged(object sender, EventArgs e)
@@ -131,6 +95,11 @@ namespace Terenski_zapisnik.Sections
         private void PromjerTextBox_TextChanged(object sender, EventArgs e)
         {
             OkrugloCijevModel.DionicaPromjer = PromjerTextBox.Text;
+        }
+
+        public IModel ReturnModel()
+        {
+            return OkrugloCijevModel;
         }
     }
 }

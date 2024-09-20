@@ -11,7 +11,7 @@ using Terenski_zapisnik.Models;
 
 namespace Terenski_zapisnik.Sections
 {
-    public partial class DionicaOkruglo : Form
+    public partial class DionicaOkruglo : Form, IForm
     {
 
         OkrugloModel OkrugloModel = new OkrugloModel();
@@ -21,49 +21,47 @@ namespace Terenski_zapisnik.Sections
         {
             InitializeComponent();
 
-            //R_textBox.Text = Dionice.dionice[Dionice.activeIndex].R.ToString();
-            //H_textBox.Text = Dionice.dionice[Dionice.activeIndex].H.ToString();
+            OkrugloModel.Image = pictureBox1.Image;
         }
 
         private void LostFocus(object sender, EventArgs e)
         {
-            if (R_textBox.Text != "" && H_textBox.Text != "" && VizmjerenoTextBox.Text != "" && TlakTextBox.Text != "" && StartTimeTextBox.Text != "" && EndTimeTextBox.Text != "" && NazivDioniceTextBox.Text != "" && PromjerTextBox.Text != "" && MaterijalTextBox.Text != "")
+            //if (R_textBox.Text != "" && H_textBox.Text != "" && VizmjerenoTextBox.Text != "" && TlakTextBox.Text != "" && StartTimeTextBox.Text != "" && EndTimeTextBox.Text != "" && NazivDioniceTextBox.Text != "" && PromjerTextBox.Text != "" && MaterijalTextBox.Text != "")
+            //{
+            //    OkrugloModel.Image = pictureBox1.Image;
+            //    OkrugloModel.Output(Terenski_zapisnik.Models.Dionice.dionice[Terenski_zapisnik.Models.Dionice.activeIndex].DionicaModel);
+            //}
+        }
+
+        private void KeyPressValidation(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is not a digit or is not the backspace key
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
             {
-                OkrugloModel.Image = pictureBox1.Image;
-                OkrugloModel.Output(Terenski_zapisnik.Models.Dionice.dionice[Terenski_zapisnik.Models.Dionice.activeIndex].DionicaModel);
+                // Mark the event as handled to prevent the character from being entered
+                e.Handled = true;
             }
         }
 
         private void R_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(R_textBox.Text, out double R))
-            {
-                OkrugloModel.R = R;
-            }
+            OkrugloModel.R_Text = R_textBox.Text;
+
         }
 
         private void H_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(H_textBox.Text, out double H))
-            {
-                OkrugloModel.H = H;
-            }
+            OkrugloModel.H_Text = H_textBox.Text;
         }
 
         private void VizmjerenoTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(VizmjerenoTextBox.Text, out double VIzmj))
-            {
-                OkrugloModel.VIzmjereno = VIzmj;
-            }
+            OkrugloModel.VIzmjereno_Text = VizmjerenoTextBox.Text;
         }
 
         private void TlakTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(TlakTextBox.Text, out double Tlak))
-            {
-                OkrugloModel.IspitniTlak = Tlak;
-            }
+            OkrugloModel.IspitniTlak_Text = TlakTextBox.Text;
         }
 
         private void NazivDioniceTextBox_TextChanged(object sender, EventArgs e)
@@ -89,6 +87,11 @@ namespace Terenski_zapisnik.Sections
         private void EndTimeTextBox_TextChanged(object sender, EventArgs e)
         {
             OkrugloModel.VrijemeEnd = EndTimeTextBox.Text;
+        }
+
+        public IModel ReturnModel()
+        {
+            return OkrugloModel;
         }
     }
 }

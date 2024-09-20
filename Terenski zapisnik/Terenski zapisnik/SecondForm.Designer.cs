@@ -63,7 +63,7 @@
             this.contentPanel.Controls.Add(this.KupacTextBox);
             this.contentPanel.Controls.Add(this.label5);
             this.contentPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.contentPanel.Location = new System.Drawing.Point(507, 120);
+            this.contentPanel.Location = new System.Drawing.Point(504, 120);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(168, 474);
             this.contentPanel.TabIndex = 4;
@@ -76,7 +76,7 @@
             this.nextBtn.Margin = new System.Windows.Forms.Padding(3, 40, 3, 3);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(162, 45);
-            this.nextBtn.TabIndex = 1;
+            this.nextBtn.TabIndex = 10;
             this.nextBtn.Text = "Dalje";
             this.nextBtn.UseVisualStyleBackColor = true;
             this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
@@ -87,8 +87,7 @@
             this.VoditeljTextBox.Location = new System.Drawing.Point(3, 357);
             this.VoditeljTextBox.Name = "VoditeljTextBox";
             this.VoditeljTextBox.Size = new System.Drawing.Size(162, 26);
-            this.VoditeljTextBox.TabIndex = 14;
-            this.VoditeljTextBox.Text = "David D.";
+            this.VoditeljTextBox.TabIndex = 5;
             // 
             // label7
             // 
@@ -107,8 +106,7 @@
             this.IspitivacTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.IspitivacTextBox.Name = "IspitivacTextBox";
             this.IspitivacTextBox.Size = new System.Drawing.Size(162, 26);
-            this.IspitivacTextBox.TabIndex = 12;
-            this.IspitivacTextBox.Text = "Luka B.";
+            this.IspitivacTextBox.TabIndex = 4;
             // 
             // label6
             // 
@@ -127,8 +125,7 @@
             this.DatumTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.DatumTextBox.Name = "DatumTextBox";
             this.DatumTextBox.Size = new System.Drawing.Size(162, 26);
-            this.DatumTextBox.TabIndex = 4;
-            this.DatumTextBox.Text = "1/1/2023";
+            this.DatumTextBox.TabIndex = 3;
             // 
             // label1
             // 
@@ -147,8 +144,7 @@
             this.RadniNalogTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.RadniNalogTextBox.Name = "RadniNalogTextBox";
             this.RadniNalogTextBox.Size = new System.Drawing.Size(162, 26);
-            this.RadniNalogTextBox.TabIndex = 6;
-            this.RadniNalogTextBox.Text = "RadniNalog";
+            this.RadniNalogTextBox.TabIndex = 2;
             // 
             // label3
             // 
@@ -167,8 +163,7 @@
             this.LokacijaTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.LokacijaTextBox.Name = "LokacijaTextBox";
             this.LokacijaTextBox.Size = new System.Drawing.Size(162, 26);
-            this.LokacijaTextBox.TabIndex = 8;
-            this.LokacijaTextBox.Text = "Gradiliste";
+            this.LokacijaTextBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -187,8 +182,7 @@
             this.KupacTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.KupacTextBox.Name = "KupacTextBox";
             this.KupacTextBox.Size = new System.Drawing.Size(162, 26);
-            this.KupacTextBox.TabIndex = 10;
-            this.KupacTextBox.Text = "Ivan M.";
+            this.KupacTextBox.TabIndex = 0;
             // 
             // label5
             // 

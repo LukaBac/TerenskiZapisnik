@@ -83,18 +83,20 @@
             this.R_textBox.Location = new System.Drawing.Point(114, 126);
             this.R_textBox.Name = "R_textBox";
             this.R_textBox.Size = new System.Drawing.Size(204, 29);
-            this.R_textBox.TabIndex = 2;
+            this.R_textBox.TabIndex = 0;
             this.R_textBox.TextChanged += new System.EventHandler(this.R_textBox_TextChanged);
+            this.R_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressValidation);
             this.R_textBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
             // H_textBox
             // 
             this.H_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.H_textBox.Location = new System.Drawing.Point(117, 174);
+            this.H_textBox.Location = new System.Drawing.Point(114, 173);
             this.H_textBox.Name = "H_textBox";
             this.H_textBox.Size = new System.Drawing.Size(204, 29);
-            this.H_textBox.TabIndex = 3;
+            this.H_textBox.TabIndex = 1;
             this.H_textBox.TextChanged += new System.EventHandler(this.H_textBox_TextChanged);
+            this.H_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressValidation);
             this.H_textBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
             // L_textBox
@@ -103,8 +105,9 @@
             this.L_textBox.Location = new System.Drawing.Point(114, 227);
             this.L_textBox.Name = "L_textBox";
             this.L_textBox.Size = new System.Drawing.Size(204, 29);
-            this.L_textBox.TabIndex = 4;
+            this.L_textBox.TabIndex = 2;
             this.L_textBox.TextChanged += new System.EventHandler(this.L_textBox_TextChanged);
+            this.L_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressValidation);
             this.L_textBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
             // R2_textBox
@@ -113,8 +116,9 @@
             this.R2_textBox.Location = new System.Drawing.Point(114, 280);
             this.R2_textBox.Name = "R2_textBox";
             this.R2_textBox.Size = new System.Drawing.Size(204, 29);
-            this.R2_textBox.TabIndex = 5;
+            this.R2_textBox.TabIndex = 3;
             this.R2_textBox.TextChanged += new System.EventHandler(this.R2_textBox_TextChanged);
+            this.R2_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressValidation);
             this.R2_textBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
             // ProjectNameLabel
@@ -164,8 +168,9 @@
             this.VizmjerenoTextBox.Location = new System.Drawing.Point(174, 467);
             this.VizmjerenoTextBox.Name = "VizmjerenoTextBox";
             this.VizmjerenoTextBox.Size = new System.Drawing.Size(129, 29);
-            this.VizmjerenoTextBox.TabIndex = 10;
+            this.VizmjerenoTextBox.TabIndex = 6;
             this.VizmjerenoTextBox.TextChanged += new System.EventHandler(this.VizmjerenoTextBox_TextChanged);
+            this.VizmjerenoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressValidation);
             this.VizmjerenoTextBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
             // label5
@@ -185,7 +190,7 @@
             this.StartTimeTextBox.Mask = "00:00";
             this.StartTimeTextBox.Name = "StartTimeTextBox";
             this.StartTimeTextBox.Size = new System.Drawing.Size(57, 29);
-            this.StartTimeTextBox.TabIndex = 12;
+            this.StartTimeTextBox.TabIndex = 4;
             this.StartTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.StartTimeTextBox.TextChanged += new System.EventHandler(this.StartTimeTextBox_TextChanged);
             this.StartTimeTextBox.LostFocus += new System.EventHandler(this.LostFocus);
@@ -197,7 +202,7 @@
             this.EndTimeTextBox.Mask = "00:00";
             this.EndTimeTextBox.Name = "EndTimeTextBox";
             this.EndTimeTextBox.Size = new System.Drawing.Size(57, 29);
-            this.EndTimeTextBox.TabIndex = 13;
+            this.EndTimeTextBox.TabIndex = 5;
             this.EndTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.EndTimeTextBox.TextChanged += new System.EventHandler(this.EndTimeTextBox_TextChanged);
             this.EndTimeTextBox.LostFocus += new System.EventHandler(this.LostFocus);
@@ -238,8 +243,9 @@
             this.TlakTextBox.Location = new System.Drawing.Point(174, 513);
             this.TlakTextBox.Name = "TlakTextBox";
             this.TlakTextBox.Size = new System.Drawing.Size(129, 29);
-            this.TlakTextBox.TabIndex = 16;
+            this.TlakTextBox.TabIndex = 7;
             this.TlakTextBox.TextChanged += new System.EventHandler(this.TlakTextBox_TextChanged);
+            this.TlakTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressValidation);
             this.TlakTextBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
             // NazivDioniceTextBox
@@ -248,7 +254,7 @@
             this.NazivDioniceTextBox.Location = new System.Drawing.Point(440, 524);
             this.NazivDioniceTextBox.Name = "NazivDioniceTextBox";
             this.NazivDioniceTextBox.Size = new System.Drawing.Size(196, 29);
-            this.NazivDioniceTextBox.TabIndex = 18;
+            this.NazivDioniceTextBox.TabIndex = 8;
             this.NazivDioniceTextBox.TextChanged += new System.EventHandler(this.NazivDioniceTextBox_TextChanged);
             this.NazivDioniceTextBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
@@ -258,7 +264,7 @@
             this.MaterijalTextBox.Location = new System.Drawing.Point(653, 524);
             this.MaterijalTextBox.Name = "MaterijalTextBox";
             this.MaterijalTextBox.Size = new System.Drawing.Size(110, 29);
-            this.MaterijalTextBox.TabIndex = 19;
+            this.MaterijalTextBox.TabIndex = 9;
             this.MaterijalTextBox.TextChanged += new System.EventHandler(this.MaterijalTextBox_TextChanged);
             this.MaterijalTextBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
@@ -268,8 +274,9 @@
             this.PromjerTextBox.Location = new System.Drawing.Point(793, 524);
             this.PromjerTextBox.Name = "PromjerTextBox";
             this.PromjerTextBox.Size = new System.Drawing.Size(146, 29);
-            this.PromjerTextBox.TabIndex = 20;
+            this.PromjerTextBox.TabIndex = 10;
             this.PromjerTextBox.TextChanged += new System.EventHandler(this.PromjerTextBox_TextChanged);
+            this.PromjerTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressValidation);
             this.PromjerTextBox.LostFocus += new System.EventHandler(this.LostFocus);
             // 
             // label9

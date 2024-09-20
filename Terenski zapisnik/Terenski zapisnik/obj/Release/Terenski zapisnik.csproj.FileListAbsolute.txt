@@ -1,0 +1,31 @@
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\Terenski zapisnik.exe.config
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\Terenski zapisnik.exe.manifest
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\Terenski zapisnik.application
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\Terenski zapisnik.exe
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\Terenski zapisnik.pdb
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\DocumentFormat.OpenXml.dll
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\DocumentFormat.OpenXml.Framework.dll
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\DocumentFormat.OpenXml.xml
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\DocumentFormat.OpenXml.Framework.xml
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.csproj.AssemblyReference.cache
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.csproj.SuggestedBindingRedirects.cache
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.DionicaForm.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.FirstForm.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.MainContainer.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.MainForm.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.Properties.Resources.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.SecondForm.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.Sections.DionicaOkrCijev.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.Sections.DionicaOkruglo.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.Sections.Dionice.DionicaPravokutno.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.Sections.Dionice.DionicaPravokutnoCijev.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski_zapisnik.Sections.InputForm.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.csproj.GenerateResource.cache
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.csproj.CoreCompileInputs.cache
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.exe.manifest
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.application
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.csproj.CopyComplete
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.exe
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Release\Terenski zapisnik.pdb
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\img\okruglo+cijev.png
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Release\img\Template.docx

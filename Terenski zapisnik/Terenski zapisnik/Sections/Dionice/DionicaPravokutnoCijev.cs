@@ -11,77 +11,73 @@ using Terenski_zapisnik.Models;
 
 namespace Terenski_zapisnik.Sections.Dionice
 {
-    public partial class DionicaPravokutnoCijev : Form
+    public partial class DionicaPravokutnoCijev : Form, IForm
     {
         PravokutnoCijevModel PravokutnoCijevModel = new PravokutnoCijevModel();
 
         public DionicaPravokutnoCijev()
         {
             InitializeComponent();
+
+            PravokutnoCijevModel.Image = pictureBox1.Image;
         }
 
         private void LostFocus(object sender, EventArgs e)
         {
-            if (š_textBox.Text != "" && h_textBox.Text != "" && d_textBox.Text != "" && L_textBox.Text != "" && r_textBox.Text != "" && VizmjerenoTextBox.Text != "" && TlakTextBox.Text != "" && StartTimeTextBox.Text != "" && EndTimeTextBox.Text != "" && NazivDioniceTextBox.Text != "" && PromjerTextBox.Text != "" && MaterijalTextBox.Text != "")
+            //if (š_textBox.Text != "" && h_textBox.Text != "" && d_textBox.Text != "" && L_textBox.Text != "" && r_textBox.Text != "" && VizmjerenoTextBox.Text != "" && TlakTextBox.Text != "" && StartTimeTextBox.Text != "" && EndTimeTextBox.Text != "" && NazivDioniceTextBox.Text != "" && PromjerTextBox.Text != "" && MaterijalTextBox.Text != "")
+            //{
+            //    PravokutnoCijevModel.Image = pictureBox1.Image;
+            //    PravokutnoCijevModel.Output(Terenski_zapisnik.Models.Dionice.dionice[Terenski_zapisnik.Models.Dionice.activeIndex].DionicaModel);
+            //}
+        }
+
+        private void KeyPressValidation(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is not a digit or is not the backspace key
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
             {
-                PravokutnoCijevModel.Image = pictureBox1.Image;
-                PravokutnoCijevModel.Output(Terenski_zapisnik.Models.Dionice.dionice[Terenski_zapisnik.Models.Dionice.activeIndex].DionicaModel);
+                // Mark the event as handled to prevent the character from being entered
+                e.Handled = true;
             }
         }
 
         private void Š_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(š_textBox.Text, out double Š))
-            {
-                PravokutnoCijevModel.Š = Š;
-            }
+            PravokutnoCijevModel.Š_Text = š_textBox.Text;
         }
 
         private void H_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(h_textBox.Text, out double H))
-            {
-                PravokutnoCijevModel.H = H;
-            }
+            PravokutnoCijevModel.H_Text = h_textBox.Text;
+
         }
         private void d_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(d_textBox.Text, out double d))
-            {
-                PravokutnoCijevModel.d = d;
-            }
+            PravokutnoCijevModel.d_Text = d_textBox.Text;
+
         }
 
         private void L_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(L_textBox.Text, out double L))
-            {
-                PravokutnoCijevModel.L = L;
-            }
+            PravokutnoCijevModel.L_Text = L_textBox.Text;
+
         }
 
         private void r_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(r_textBox.Text, out double r))
-            {
-                PravokutnoCijevModel.r = r;
-            }
+            PravokutnoCijevModel.r_Text = r_textBox.Text;
+
         }
 
         private void VizmjerenoTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(VizmjerenoTextBox.Text, out double VIzmj))
-            {
-                PravokutnoCijevModel.VIzmjereno = VIzmj;
-            }
+            PravokutnoCijevModel.VIzmjereno_Text = VizmjerenoTextBox.Text;
+
         }
 
         private void TlakTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Double.TryParse(TlakTextBox.Text, out double Tlak))
-            {
-                PravokutnoCijevModel.IspitniTlak = Tlak;
-            }
+            PravokutnoCijevModel.IspitniTlak_Text = TlakTextBox.Text;
         }
 
         private void NazivDioniceTextBox_TextChanged(object sender, EventArgs e)
@@ -107,6 +103,11 @@ namespace Terenski_zapisnik.Sections.Dionice
         private void EndTimeTextBox_TextChanged(object sender, EventArgs e)
         {
             PravokutnoCijevModel.VrijemeEnd = EndTimeTextBox.Text;
+        }
+
+        public IModel ReturnModel()
+        {
+            return PravokutnoCijevModel;
         }
     }
 }

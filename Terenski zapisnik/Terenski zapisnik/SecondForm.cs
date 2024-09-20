@@ -25,26 +25,30 @@ namespace Terenski_zapisnik
         {
             #region Setting Values
 
-            ProjectModel.Kupac = KupacTextBox.Text;
-            ProjectModel.Lokacija = LokacijaTextBox.Text;
-            ProjectModel.RadniNalog = RadniNalogTextBox.Text;
-            ProjectModel.Datum = DateTime.Parse(DatumTextBox.Text);
-            ProjectModel.Ispitivac = IspitivacTextBox.Text;
-            ProjectModel.Voditelj = VoditeljTextBox.Text;
+            if (KupacTextBox.Text != "" && LokacijaTextBox.Text != "" && KupacTextBox.Text != "" && RadniNalogTextBox.Text != "" && DatumTextBox.Text != "" && IspitivacTextBox.Text != "" && VoditeljTextBox.Text != "")
+            {
+                ProjectModel.Kupac = KupacTextBox.Text;
+                ProjectModel.Lokacija = LokacijaTextBox.Text;
+                ProjectModel.RadniNalog = RadniNalogTextBox.Text;
+                ProjectModel.Datum = DatumTextBox.Text;
+                //ProjectModel.Datum = DateTime.Parse(DatumTextBox.Text);
+                ProjectModel.Ispitivac = IspitivacTextBox.Text;
+                ProjectModel.Voditelj = VoditeljTextBox.Text;
 
-            #endregion
+                #endregion
 
-            Panel mainPanel = (Panel)this.Parent;
+                Panel mainPanel = (Panel)this.Parent;
 
-            Form form = new DionicaForm();
-            form.TopLevel = false;
-            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            form.Show();
+                Form form = new DionicaForm();
+                form.TopLevel = false;
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                form.Dock = DockStyle.Fill;
+                form.Show();
 
 
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(form);
+                mainPanel.Controls.Clear();
+                mainPanel.Controls.Add(form);
+            }
         }
     }
 }

@@ -40,58 +40,59 @@ namespace Terenski_zapisnik
 
         private void AddDionicaBtn_Click(object sender, EventArgs e)
         {
-
-            #region AddButton
-            Button btn = new Button();
-            btn.Size = new Size(184, 64);
-            btn.Click += new System.EventHandler(this.DionicaBtn_Click);
-
-            btn.BackColor = System.Drawing.Color.FromArgb(38, 43, 66);
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.ForeColor = System.Drawing.Color.White;
-            btn.Text = $"Dionica {Dionice.dionice.Count() + 1}";
-            btn.FlatAppearance.BorderSize = 0;
-            #endregion
-
-            #region AddForm
-
-            Form form = new Form();
-
-            switch (checkedBtn)
+            if (dionicaPanel.Controls.Count < 2)
             {
-                case "OkrugloBtn":
-                    form = new DionicaOkruglo();
-                    break;
-                case "OkrugloCijevBtn":
-                    form = new DionicaOkrCijev();
-                    break;
-                case "PravokutnoBtn":
-                    form = new DionicaPravokutno();
-                    break;
-                case "Pravokutno2Btn":
-                    form = new DionicaPravokutnoCijev();
-                    break;
-                default:
-                    form = new DionicaOkruglo();
-                    break;
-            }
+                #region AddButton
+                Button btn = new Button();
+                btn.Size = new Size(184, 64);
+                btn.Click += new System.EventHandler(this.DionicaBtn_Click);
+                btn.BackColor = System.Drawing.Color.FromArgb(38, 43, 66);
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.ForeColor = System.Drawing.Color.White;
+                btn.Text = $"Dionica {Dionice.dionice.Count() + 1}";
+                btn.FlatAppearance.BorderSize = 0;
+                #endregion
 
-            form.TopLevel = false;
-            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            form.Show();
+                #region AddForm
 
-            if (checkedBtn != "")
-            {
-                Dionice.dionice.Add(new Dionica(btn.Text, checkedBtn, form, new DionicaModel()));
-            }
+                Form form = new Form();
 
-            else
-            {
-                Dionice.dionice.Add(new Dionica(btn.Text, "OkrugloBtn", form, new DionicaModel()));
+                switch (checkedBtn)
+                {
+                    case "OkrugloBtn":
+                        form = new DionicaOkruglo();
+                        break;
+                    case "OkrugloCijevBtn":
+                        form = new DionicaOkrCijev();
+                        break;
+                    case "PravokutnoBtn":
+                        form = new DionicaPravokutno();
+                        break;
+                    case "Pravokutno2Btn":
+                        form = new DionicaPravokutnoCijev();
+                        break;
+                    default:
+                        form = new DionicaOkruglo();
+                        break;
+                }
+
+                form.TopLevel = false;
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+
+                if (checkedBtn != "")
+                {
+                    Dionice.dionice.Add(new Dionica(btn.Text, checkedBtn, form, new DionicaModel()));
+                }
+
+                else
+                {
+                    Dionice.dionice.Add(new Dionica(btn.Text, "OkrugloBtn", form, new DionicaModel()));
+                }
+                dionicaPanel.Controls.Add(btn);
+                #endregion
             }
-            dionicaPanel.Controls.Add(btn);
-            #endregion
         }
 
         private void DionicaBtn_Click(object sender, EventArgs e)
@@ -191,7 +192,45 @@ namespace Terenski_zapisnik
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            Dionice.dionice[Dionice.activeIndex].DionicaModel.Ispis();
+            if (dionicaPanel.Controls.Count != 2)
+            {
+                ProjectModel.RunError("Potrebno je imati dvije dionice!");
+            }
+
+            else
+            {
+                bool ready = true;
+                foreach (Dionica d in Dionice.dionice)
+                {
+                    if (d.Forma is IForm FormInterface)
+                    {
+                        IModel model = FormInterface.ReturnModel();
+                        if (!model.Output(d.DionicaModel))
+                        {
+                            ready = false;
+                            break;
+                        }
+                    }
+                }
+                if (ready)
+                {
+                    ProjectModel.Ispis();
+                }
+            }
+        }
+
+        private void DionicaNameKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (mainPanel.Controls.Count > 0)
+            {
+                // KeyPress is allowed to go through
+                //MessageBox.Show($"Key Pressed: {e.KeyChar}");
+            }
+            else
+            {
+                // Main panel is empty, do not allow the keypress
+                e.Handled = true;
+            }
         }
 
         private void DionicaNameTextBox_TextChanged(object sender, EventArgs e)

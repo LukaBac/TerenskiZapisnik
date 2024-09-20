@@ -40,115 +40,128 @@ namespace Terenski_zapisnik.Models
         public string DionicaMaterijal { get; set; }
         public string DionicaPromjer { get; set; }
 
-        public void Ispis()
+        //public void Ispis()
+        //{
+        //    // Replace "YourTemplatePath.docx" with the path to your Word template
+        //    string templatePath = "TemplateNew(2).docx";
+
+        //    //dionicaoutput
+        //    using (WordprocessingDocument templateDoc = WordprocessingDocument.Open(templatePath, true))
+        //    {
+        //        // Show the save file dialog to get the output path from the user
+        //        using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+        //        {
+        //            saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
+        //            saveFileDialog.Title = "Save As";
+        //            saveFileDialog.FileName = "OutputDocument";
+
+        //            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+        //            {
+        //                string outputPath = saveFileDialog.FileName;
+
+        //                // Clone the template document to create a new one
+        //                using (WordprocessingDocument outputDoc = templateDoc.Clone(outputPath))
+        //                {
+        //                    ReplaceTextAtBookmark(outputDoc, "Kupac", ProjectModel.Kupac);
+        //                    ReplaceTextAtBookmark(outputDoc, "Lokacija", ProjectModel.Lokacija);
+        //                    ReplaceTextAtBookmark(outputDoc, "RadniNalog", ProjectModel.RadniNalog);
+        //                    ReplaceTextAtBookmark(outputDoc, "Datum", ProjectModel.Datum.ToString("dd.MM.yyyy"));
+        //                    ReplaceTextAtBookmark(outputDoc, "RedniBr", "1.");
+
+
+        //                    //Dionica
+        //                    ReplaceTextAtBookmark(outputDoc, "Oplosje", Math.Round(OmocenoOplosje, 2).ToString());
+        //                    ReplaceTextAtBookmark(outputDoc, "Vdop", Math.Round(Vdopusteno, 2).ToString());
+        //                    ReplaceTextAtBookmark(outputDoc, "VrijemePoc", StartTime);
+        //                    ReplaceTextAtBookmark(outputDoc, "VrijemeEnd", EndTime);
+        //                    ReplaceTextAtBookmark(outputDoc, "VIzmj", VIzmjereno.ToString());
+        //                    ReplaceTextAtBookmark(outputDoc, "VIzmjereno", VIzmjereno.ToString());
+        //                    ReplaceTextAtBookmark(outputDoc, "IspitniTlak", IspitniTlak.ToString());
+
+
+
+        //                    if (VIzmjereno <= Vdopusteno)
+        //                    {
+        //                        ReplaceTextAtBookmark(outputDoc, "Y", "X");
+        //                        ReplaceTextAtBookmark(outputDoc, "N", "");
+        //                    }
+        //                    else
+        //                    {
+        //                        ReplaceTextAtBookmark(outputDoc, "Y", "");
+        //                        ReplaceTextAtBookmark(outputDoc, "N", "X");
+        //                    }
+
+        //                    //if (Image != null)
+        //                    //{
+        //                    ReplaceBookmarkWithImage(outputDoc, "ImageBookmark", Image);
+        //                    //}
+
+        //                    ReplaceTextAtBookmark(outputDoc, "DionicaInfo", $"{DionicaNaziv}, {DionicaMaterijal}, {DionicaPromjer}");
+        //                    //ReplaceTextAtBookmark(outputDoc, "Bookmark2", "Text for Bookmark2");
+        //                    Console.WriteLine($"Document saved successfully to: {outputPath}");
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        private void ReplaceDionicaBookmarks(WordprocessingDocument doc)
         {
-            // Replace "YourTemplatePath.docx" with the path to your Word template
-            string templatePath = "TemplateNew(2).docx";
-            string dionicaTemplatePath = "DionicaTemplate.docx";
+            //Dionica
+            ReplaceTextAtBookmark(doc, "Oplosje", Math.Round(OmocenoOplosje, 2).ToString());
+            ReplaceTextAtBookmark(doc, "Vdop", Math.Round(Vdopusteno, 2).ToString());
+            ReplaceTextAtBookmark(doc, "VrijemePoc", StartTime);
+            ReplaceTextAtBookmark(doc, "VrijemeEnd", EndTime);
+            ReplaceTextAtBookmark(doc, "VIzmj", VIzmjereno.ToString());
+            ReplaceTextAtBookmark(doc, "VIzmjereno", VIzmjereno.ToString());
+            ReplaceTextAtBookmark(doc, "IspitniTlak", IspitniTlak.ToString());
 
-
-            // Open the Word document from the template
-
-            //projekt output       
-            using (WordprocessingDocument templateDoc = WordprocessingDocument.Open(templatePath, true))
+            if (VIzmjereno <= Vdopusteno)
             {
-                // Show the save file dialog to get the output path from the user
-                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-                {
-                    saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
-                    saveFileDialog.Title = "Save As";
-                    saveFileDialog.FileName = "OutputDocument";
-
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string outputPath = saveFileDialog.FileName;
-
-                        // Clone the template document to create a new one
-                        using (WordprocessingDocument outputDoc = templateDoc.Clone(outputPath))
-                        {
-                            //Projekt
-                            ReplaceTextAtBookmark(outputDoc, "Kupac", ProjectModel.Kupac);
-                            ReplaceTextAtBookmark(outputDoc, "Lokacija", ProjectModel.Lokacija);
-                            ReplaceTextAtBookmark(outputDoc, "RadniNalog", ProjectModel.RadniNalog);
-                            ReplaceTextAtBookmark(outputDoc, "Datum", ProjectModel.Datum.ToString("dd.MM.yyyy"));
-                            ReplaceTextAtBookmark(outputDoc, "RedniBr", "1.");
-
-
-
-                            //ReplaceTextAtBookmark(outputDoc, "Bookmark2", "Text for Bookmark2");
-                            Console.WriteLine($"Document saved successfully to: {outputPath}");
-                        }
-                    }
-                }
+                ReplaceTextAtBookmark(doc, "Y", "X");
+                ReplaceTextAtBookmark(doc, "N", "");
+            }
+            else
+            {
+                ReplaceTextAtBookmark(doc, "Y", "");
+                ReplaceTextAtBookmark(doc, "N", "X");
             }
 
-            //dionicaoutput
-            using (WordprocessingDocument templateDoc = WordprocessingDocument.Open(dionicaTemplatePath, true))
+            // if (Image != null)
+            // {
+            ReplaceBookmarkWithImage(doc, "ImageBookmark", Image);
+            // }
+
+            ReplaceTextAtBookmark(doc, "DionicaInfo", $"{DionicaNaziv}, {DionicaMaterijal}, {DionicaPromjer}");
+        }
+
+        private void ReplaceProjektBookmarks(WordprocessingDocument doc)
+        {
+            //Projekt
+            ReplaceTextAtBookmark(doc, "Kupac", ProjectModel.Kupac);
+            ReplaceTextAtBookmark(doc, "Lokacija", ProjectModel.Lokacija);
+            ReplaceTextAtBookmark(doc, "RadniNalog", ProjectModel.RadniNalog);
+            ReplaceTextAtBookmark(doc, "Datum", ProjectModel.Datum);
+            //ReplaceTextAtBookmark(doc, "Datum", ProjectModel.Datum.ToString("dd.MM.yyyy"));
+            ReplaceTextAtBookmark(doc, "RedniBr", "1.");
+        }
+
+        private static void CopyContent(WordprocessingDocument sourceDoc, WordprocessingDocument destinationDoc)
+        {
+            // Get the body of the source document
+            var sourceBody = sourceDoc.MainDocumentPart.Document.Body;
+
+            // Get the body of the destination document
+            var destinationBody = destinationDoc.MainDocumentPart.Document.Body;
+
+            // Clone the nodes from the source document to the destination document
+            foreach (var element in sourceBody.Elements())
             {
-                // Show the save file dialog to get the output path from the user
-                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-                {
-                    saveFileDialog.Filter = "Word Documents (*.docx)|*.docx";
-                    saveFileDialog.Title = "Save As";
-                    saveFileDialog.FileName = "OutputDocument";
-
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string outputPath = saveFileDialog.FileName;
-
-                        // Clone the template document to create a new one
-                        using (WordprocessingDocument outputDoc = templateDoc.Clone(outputPath))
-                        {
-                            //Dionica
-                            ReplaceTextAtBookmark(outputDoc, "Oplosje", Math.Round(OmocenoOplosje, 2).ToString());
-                            ReplaceTextAtBookmark(outputDoc, "Vdop", Math.Round(Vdopusteno, 2).ToString());
-                            ReplaceTextAtBookmark(outputDoc, "VrijemePoc", StartTime);
-                            ReplaceTextAtBookmark(outputDoc, "VrijemeEnd", EndTime);
-                            ReplaceTextAtBookmark(outputDoc, "VIzmj", VIzmjereno.ToString());
-                            ReplaceTextAtBookmark(outputDoc, "VIzmjereno", VIzmjereno.ToString());
-                            ReplaceTextAtBookmark(outputDoc, "IspitniTlak", IspitniTlak.ToString());
-
-
-
-                            if (VIzmjereno <= Vdopusteno)
-                            {
-                                ReplaceTextAtBookmark(outputDoc, "Y", "X");
-                                ReplaceTextAtBookmark(outputDoc, "N", "");
-                            }
-                            else
-                            {
-                                ReplaceTextAtBookmark(outputDoc, "Y", "");
-                                ReplaceTextAtBookmark(outputDoc, "N", "X");
-                            }
-
-                            //if (Image != null)
-                            //{
-                            ReplaceBookmarkWithImage(outputDoc, "ImageBookmark", Image);
-                            //}
-
-                            ReplaceTextAtBookmark(outputDoc, "DionicaInfo", $"{DionicaNaziv}, {DionicaMaterijal}, {DionicaPromjer}");
-                        //ReplaceTextAtBookmark(outputDoc, "Bookmark2", "Text for Bookmark2");
-                        Console.WriteLine($"Document saved successfully to: {outputPath}");
-                        }
-                    }
-                }
-            }
-
-
-            using (WordprocessingDocument existingDoc = WordprocessingDocument.Open(templatePath, true))
-            using (WordprocessingDocument mainDoc = WordprocessingDocument.Create(dionicaTemplatePath, WordprocessingDocumentType.Document))
-            {
-                MainDocumentPart mainPart = mainDoc.AddMainDocumentPart();
-                Document document = new Document();
-                mainPart.Document = document;
-
-                // Create a body for the main document
-                DocumentFormat.OpenXml.Wordprocessing.Body body = new DocumentFormat.OpenXml.Wordprocessing.Body();
-                document.Append(body);
-
-                CopyContent(existingDoc, body);
+                var newElement = element.CloneNode(true);
+                destinationBody.AppendChild(newElement);
             }
         }
+
 
         static void ReplaceTextAtBookmark(WordprocessingDocument doc, string bookmarkName, string newText)
         {
@@ -186,16 +199,6 @@ namespace Terenski_zapisnik.Models
             else
             {
                 Console.WriteLine($"Bookmark '{bookmarkName}' not found.");
-            }
-        }
-
-        static void CopyContent(WordprocessingDocument sourceDoc, OpenXmlElement destination)
-        {
-            // Iterate through the body elements of the source document and copy them to the destination
-            foreach (var element in sourceDoc.MainDocumentPart.Document.Body.Elements())
-            {
-                var clonedElement = element.CloneNode(true);
-                destination.AppendChild(clonedElement);
             }
         }
 

@@ -47,3 +47,9 @@ F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Te
 F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.DionicaOkrCijev.resources
 F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.Dionice.DionicaPravokutno.resources
 F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski_zapisnik.Sections.Dionice.DionicaPravokutnoCijev.resources
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Debug\Terenski zapisnik.exe.manifest
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Debug\Terenski zapisnik.application
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.exe.manifest
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\obj\Debug\Terenski zapisnik.application
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Debug\Template.docx
+F:\C# Projects\TerenskiZapisnik\Terenski zapisnik\Terenski zapisnik\bin\Debug\img\okruglo+cijev.png
